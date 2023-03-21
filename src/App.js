@@ -1,16 +1,12 @@
 import './styles/global.css'
 import { BrowserRouter } from  'react-router-dom'
-import Content from './Components/layouts/Menu';
-import Menu from './Components/layouts/Content';
+import Content from './Components/layouts/Content';
 
 function App() {
   return (
-    <div className='ml-2'>
-      
+    <div>      
       <BrowserRouter>
-            <Content />
-            <Menu />
-            
+            <Content /> 
         </BrowserRouter>      
       
     </div>

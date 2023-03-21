@@ -1,18 +1,31 @@
-import { Link } from "react-router-dom";
+import React from "react";
+import {Routes, Route} from 'react-router-dom'
+import Home from '../Home'
+import AllVehicles from "../Vehicles/AllVehicles";
+import About from "../FullPages/AboutUs";
+import Toyota from "../Vehicles/Toyota";
+import Ford from "../Vehicles/Ford";
+import Fiat from "../Vehicles/Fiat";
+import Honda from "../Vehicles/Honda";
+import Assistencia from "../FullPages/Assistencia";
+import Volskwagen from "../Vehicles/Volkswagen";
+import Chevrolet from "../Vehicles/Chevrolet";
 
-const Menu = props => (
-    <div>        
-        <ul>
-            <li>
-                <Link to ="/">Inicio</Link>
-            </li>
-            <li>
-                <Link to ="/all">Veiculos</Link>
-            </li>
-            
-        </ul>
-    </div>
-
+const Content = props => (
+    <main className='Content'>
+        <Routes>
+            <Route path="/assistencia" element={<Assistencia />}/>
+            <Route path="/volkswagen" element={<Volskwagen />}/>
+            <Route path="/chevrolet" element={<Chevrolet />} /> 
+            <Route path="/fiat" element={<Fiat />} /> 
+            <Route path="/honda" element={<Honda />} /> 
+            <Route path="/ford" element={<Ford />} /> 
+            <Route path="/toyota" element={<Toyota />} /> 
+            <Route path="/about" element={<About />} />          
+            <Route path="/all" element={<AllVehicles />} />   
+            <Route path="/" exact element={<Home />} />
+        </Routes>
+    </main>
 )
 
-export default Menu
+export default Content

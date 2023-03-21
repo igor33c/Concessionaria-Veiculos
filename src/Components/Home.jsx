@@ -1,8 +1,14 @@
+import MenuModelos from "./MenuModelos";
+import TopInfo from "./TopInfo";
 import TopMenu from "./TopMenu";
 
 function Home(){
     return(
-        <TopMenu />
+        <div>
+            <TopMenu />
+            <TopInfo />
+            <MenuModelos />
+        </div>
     )
 
 }
