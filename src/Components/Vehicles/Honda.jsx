@@ -1,8 +1,13 @@
 import MenuModelos from "../../Components/MenuModelos";
 import TopInfo from "../../Components/TopInfo";
 import TopMenu from "../../Components/TopMenu";
+import carData from "./VehiclesList";
 
 function Honda(){
+    const hondaCars = Object.values(carData).filter(car => car.marca === 'Honda')    
+
+    console.log(hondaCars)
+
     return(
         <div>
             <TopMenu />

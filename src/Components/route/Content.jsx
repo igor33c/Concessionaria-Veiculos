@@ -10,10 +10,12 @@ import Honda from "../Vehicles/Honda";
 import Assistencia from "../FullPages/Assistencia";
 import Volskwagen from "../Vehicles/Volkswagen";
 import Chevrolet from "../Vehicles/Chevrolet";
+import Buying from "../FullPages/Buying";
 
 const Content = props => (
     <main className='Content'>
         <Routes>
+            <Route path="/comprar" element={<Buying />}/>
             <Route path="/assistencia" element={<Assistencia />}/>
             <Route path="/volkswagen" element={<Volskwagen />}/>
             <Route path="/chevrolet" element={<Chevrolet />} /> 

@@ -1,3 +1,4 @@
+import MenuModelos from "../MenuModelos"
 import TopInfo from "../TopInfo"
 import TopMenu from "../TopMenu"
 
@@ -6,9 +7,12 @@ function About (){
         <div>
             <TopMenu />
             <TopInfo />
-            <h1>
-                Sobre Nós
-            </h1>
+            <MenuModelos />
+            <div className="px-4 justify-center">
+                <h1>
+                    Sobre Nós
+                </h1>
+            </div>
         </div>
     )
 
