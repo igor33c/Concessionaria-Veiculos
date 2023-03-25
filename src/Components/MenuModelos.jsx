@@ -2,7 +2,7 @@ import { Link } from "react-router-dom"
 
 function MenuModelos (){
     return(
-        <div className="flex bg-gra px-4 mt-0.5 py-2 bg-gradient-to-r from-cyan-200 to-blue-300">
+        <div className="flex bg-gra px-4 py-2 bg-gradient-to-r from-cyan-200 to-blue-300">
             <ul className="flex flex-wrap text-gray-700">
                 <li className="mx-1 my-1">
                     <Link to ="/toyota">

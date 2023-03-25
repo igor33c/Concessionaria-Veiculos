@@ -2,17 +2,16 @@ import carData from "./Vehicles/VehiclesList"
 // importacao de dados de veiculos
 import { Link } from "react-router-dom"
 
-function ShowVehicles (){
-
-    
+function ShowVehicles (){    
     return(
-        <div className="px-4">
+        <div className="px-4 py-8">
             <div className="text-center mt-4 mb-4">
                 <h1 className="text-blue-500 font-bold text-lg md:text-4xl">
                     Em destaque
                 </h1>
             </div>
-            <div className="flex flex-col md:flex-row justify-center items-center gap-4">               
+
+            <div className="flex flex-col md:flex-row justify-center items-center gap-4 py-4">               
                 <div className="w-full md:w-auto">
                     <Link to="/comprar" state={carData.car1}>
                         {
@@ -32,7 +31,8 @@ function ShowVehicles (){
                                 R${carData.car1.preco}
                             </p>
                         </div>                    
-                </div>                
+                </div> 
+
                 <div className="w-full md:w-auto">
                     <Link to="/comprar" state={carData.car2}>
                     <img
@@ -51,6 +51,7 @@ function ShowVehicles (){
                     </div>
                 
                 </div>
+
                 <div className="w-full md:w-auto">
                     <Link to="/comprar" state={carData.car3}>
                     <img
@@ -70,43 +71,47 @@ function ShowVehicles (){
                 
                 </div>
                 <div className="w-full md:w-auto">
-                    <Link to="/comprar" state={carData.car2}>
+                    <Link to="/comprar" state={carData.car4}>
                     <img
                     className="w-full md:w-56 h-36 object-cover"
-                    src={carData.car2.photo_1}
+                    src={carData.car4.photo_1}
                     alt="Civic 2020"
                     />
                     </Link>
                     <div className="bg-gray-100 p-2 text-center">
                         <p className="font-bold text-lg">
-                            {carData.car2.marca} {carData.car2.modelo} {carData.car2.ano}
+                            {carData.car4.marca} {carData.car4.modelo} {carData.car4.ano}
                         </p>
                         <p className="font-bold text-lg text-blue-500">
-                            R${carData.car2.preco}
+                            R${carData.car4.preco}
                         </p>
                     </div>
                 
                 </div>
                 <div className="w-full md:w-auto">
-                    <Link to="/comprar" state={carData.car2}>
+                    <Link to="/comprar" state={carData.car5}>
                     <img
                     className="w-full md:w-56 h-36 object-cover"
-                    src={carData.car2.photo_1}
+                    src={carData.car5.photo_1}
                     alt="Civic 2020"
                     />
                     </Link>
                     <div className="bg-gray-100 p-2 text-center">
                         <p className="font-bold text-lg">
-                            {carData.car2.marca} {carData.car2.modelo} {carData.car2.ano}
+                            {carData.car5.marca} {carData.car5.modelo} {carData.car5.ano}
                         </p>
                         <p className="font-bold text-lg text-blue-500">
-                            R${carData.car2.preco}
+                            R${carData.car5.preco}
                         </p>
                     </div>
                 
                 </div>
                 
             </div>
+
+            <Link to="/all">
+                <h2 className=" text-blue-600 hover:text-red-600 font-bold text-3xl ">Todos veiculos</h2>
+            </Link>
   
         </div>
     )
