@@ -12,11 +12,12 @@ function AllVehicles (){
             <TopMenu />
             <TopInfo />
             <MenuModelos />
-            <div className="bg-gradient-to-br from-blue-200 to-violet-300 px-4 car grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 
-                            xl:grid-cols-5 gap-4 sm:gap-6 md:gap-8 lg:gap-10 xl:gap-12 py-24"
+            <div className="bg-gradient-to-br from-blue-200 to-violet-300 px-4 car grid grid-cols-1 
+                            sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 
+                            xl:grid-cols-4 gap-4 sm:gap-6 md:gap-8 lg:gap-10 xl:gap-12 py-24"
             >
                 {Object.keys(allData).map((carId) => (/// mapeando o obj usando carId como Key
-                    <div key={carId} className="car mr-4 ml-4 justify-center text-center"> 
+                    <div key={carId} className="car mr-4 ml-4"> 
                     {
                     ///div para cada veiculo ser mostrado separadamente
                     }

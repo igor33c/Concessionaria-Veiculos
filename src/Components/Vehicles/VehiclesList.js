@@ -19,16 +19,19 @@ import car6_photo_3 from '../../images/cars/corolla2023/corolla2023_3.jpg'
 import car7_photo_1 from '../../images/cars/uno2014/uno2014_1.jpg'
 import car7_photo_2 from '../../images/cars/uno2014/uno2014_2.jpg'
 import car7_photo_3 from '../../images/cars/uno2014/uno2014_3.jpg'
-import car8_photo_1 from '../../images/cars/gol2011/gol2011_1.jpg'
-import car8_photo_2 from '../../images/cars/gol2011/gol2011_2.jpg'
-import car8_photo_3 from '../../images/cars/gol2011/gol2011_3.jpg'
+import car8_photo_1 from '../../images/cars/ka2019/ka2019_1.jpg'
+import car8_photo_2 from '../../images/cars/ka2019/ka2019_2.jpg'
+import car8_photo_3 from '../../images/cars/ka2019/ka2019_3.jpg'
+import car9_photo_1 from '../../images/cars/onix2020/onix2020_1.jpg'
+import car9_photo_2 from '../../images/cars/onix2020/onix2020_2.jpg'
+import car9_photo_3 from '../../images/cars/onix2020/onix2020_3.jpg'
 
 const carData = {    
     car1: 
     {
         id : '#01',
         marca : 'Toyota',
-        modelo: 'Corolla',
+        modelo: 'Corolla XLI 1.8',
         ano: 2000,
         km: 189123,
         preco: 22800.00,
@@ -38,6 +41,7 @@ const carData = {
         equipamentos: {
             arcondicionado: 'sim',
             faroldemilha: 'sim',
+            cambio: 'manual'
         }  
     },
     car2:
@@ -50,13 +54,18 @@ const carData = {
         preco: 132019, 
         photo_1: car2_photo_1,
         photo_2: car2_photo_2,
-        photo_3: car2_photo_3        
+        photo_3: car2_photo_3,
+        equipamentos: {
+            arcondicionado: 'sim',
+            faroldemilha: 'sim',
+            cambio: 'automatico'
+        }        
     },
     car3:
     {
         id : '#03',
         marca : 'Fiat',
-        modelo: 'Argo Drive',
+        modelo: 'Argo 1.0',
         ano: 2021,
         km: 24021,
         preco: 62340,      
@@ -81,7 +90,7 @@ const carData = {
     {
         id : '#05',
         marca : 'Volkswagen',
-        modelo: 'Gol',
+        modelo: 'Gol 1.0',
         ano: 2011,
         km: 79543,
         preco: 21000,
@@ -103,7 +112,7 @@ const carData = {
     },
     car7:
     {
-        id : '#06',
+        id : '#07',
         marca : 'Fiat',
         modelo: 'Uno ',
         ano: 2014,
@@ -112,6 +121,30 @@ const carData = {
         photo_1: car7_photo_1,
         photo_2: car7_photo_2,
         photo_3: car7_photo_3       
+    },
+    car8:
+    {
+        id : '#07',
+        marca : 'Ford',
+        modelo: 'Ka SE 1.0 ',
+        ano: 2019,
+        km: 7842,
+        preco: 52700,
+        photo_1: car8_photo_1,
+        photo_2: car8_photo_2,
+        photo_3: car8_photo_3       
+    },
+    car9:
+    {
+        id : '#08',
+        marca : 'Chevrolet',
+        modelo: 'Onix 1.0 Turbo',
+        ano: 2020,
+        km: 24252,
+        preco: 52700,
+        photo_1: car9_photo_1,
+        photo_2: car9_photo_2,
+        photo_3: car9_photo_3       
     }
   };
 

@@ -10,40 +10,51 @@ function ShowVehicles (){
                     Em destaque
                 </h1>
             </div>
-
-            <div className="flex flex-col md:flex-row justify-center items-center gap-4 py-4">               
-                <div className="w-full md:w-auto">
+            <div className="flex flex-col md:flex-row justify-center items-center gap-4 py-4 ">               
+                <div className="w-full md:w-auto bg-gray-100 ">
                     <Link to="/comprar" state={carData.car1}>
                         {
                             //Linka para a proxima pagina de comprar e passa o dado do veiculo escolhido pelo usuario
                         }
                         <img
-                        className="w-full md:w-56 h-36 object-cover"
+                        className="w-full md:w-64 h-48 object-cover"
                         src={carData.car1.photo_1}
                         alt="corolla2000"
                         />
                     </Link>
-                        <div className="bg-gray-100 p-2 text-center">
-                            <p className="font-bold text-lg">
-                                {carData.car1.marca} {carData.car1.modelo} {carData.car1.ano}
-                            </p>
-                            <p className="font-bold text-lg text-blue-500">
-                                R${carData.car1.preco}
-                            </p>
-                        </div>                    
+                    <div className=" p-2 text-center">
+                        <p className="font-bold text-lg">
+                            {carData.car1.marca} {carData.car1.modelo} 
+                        </p>
+                        <p>
+                            {carData.car1.ano}
+                        </p>
+                        <p>
+                            {carData.car1.km}km
+                        </p>
+                        <p className="font-bold text-lg text-blue-500">
+                            R${carData.car1.preco}
+                        </p>
+                    </div>                    
                 </div> 
 
-                <div className="w-full md:w-auto">
+                <div className="w-full md:w-auto bg-gray-100">
                     <Link to="/comprar" state={carData.car2}>
                     <img
-                    className="w-full md:w-56 h-36 object-cover"
+                    className="w-full md:w-64 h-48 object-cover"
                     src={carData.car2.photo_1}
                     alt="Civic 2020"
                     />
                     </Link>
-                    <div className="bg-gray-100 p-2 text-center">
+                    <div className="p-2 text-center">
                         <p className="font-bold text-lg">
-                            {carData.car2.marca} {carData.car2.modelo} {carData.car2.ano}
+                            {carData.car2.marca} {carData.car2.modelo}
+                        </p>
+                        <p>
+                            {carData.car2.ano}
+                        </p>
+                        <p>
+                            {carData.car2.km}km
                         </p>
                         <p className="font-bold text-lg text-blue-500">
                             R${carData.car2.preco}
@@ -52,17 +63,23 @@ function ShowVehicles (){
                 
                 </div>
 
-                <div className="w-full md:w-auto">
+                <div className="w-full md:w-auto bg-gray-100">
                     <Link to="/comprar" state={carData.car3}>
                     <img
-                    className="w-full md:w-56 h-36 object-cover"
+                    className="w-full md:w-64 h-48 object-cover"
                     src={carData.car3.photo_1}
                     alt="--"
                     />
                     </Link>
                     <div className="bg-gray-100 p-2 text-center">
                         <p className="font-bold text-lg">
-                            {carData.car3.marca} {carData.car3.modelo} {carData.car3.ano}
+                            {carData.car3.marca} {carData.car3.modelo} 
+                        </p>
+                        <p>
+                            {carData.car3.ano}
+                        </p>
+                        <p>
+                            {carData.car3.km}km
                         </p>
                         <p className="font-bold text-lg text-blue-500">
                             R${carData.car3.preco}
@@ -70,49 +87,33 @@ function ShowVehicles (){
                     </div>
                 
                 </div>
-                <div className="w-full md:w-auto">
+                <div className="w-full md:w-auto bg-gray-100">
                     <Link to="/comprar" state={carData.car4}>
                     <img
-                    className="w-full md:w-56 h-36 object-cover"
+                    className="w-full md:w-64 h-48 object-cover"
                     src={carData.car4.photo_1}
                     alt="Civic 2020"
                     />
                     </Link>
-                    <div className="bg-gray-100 p-2 text-center">
+                    <div className="p-2 text-center">
                         <p className="font-bold text-lg">
-                            {carData.car4.marca} {carData.car4.modelo} {carData.car4.ano}
+                            {carData.car4.marca} {carData.car4.modelo}
+                        </p>
+                        <p>
+                            {carData.car4.ano}
+                        </p>
+                        <p>
+                            {carData.car4.km}km
                         </p>
                         <p className="font-bold text-lg text-blue-500">
                             R${carData.car4.preco}
                         </p>
-                    </div>
-                
-                </div>
-                <div className="w-full md:w-auto">
-                    <Link to="/comprar" state={carData.car5}>
-                    <img
-                    className="w-full md:w-56 h-36 object-cover"
-                    src={carData.car5.photo_1}
-                    alt="Civic 2020"
-                    />
-                    </Link>
-                    <div className="bg-gray-100 p-2 text-center">
-                        <p className="font-bold text-lg">
-                            {carData.car5.marca} {carData.car5.modelo} {carData.car5.ano}
-                        </p>
-                        <p className="font-bold text-lg text-blue-500">
-                            R${carData.car5.preco}
-                        </p>
-                    </div>
-                
-                </div>
-                
+                    </div>                
+                </div>                              
             </div>
-
             <Link to="/all">
                 <h2 className=" text-blue-600 hover:text-red-600 font-bold text-3xl ">Todos veiculos</h2>
-            </Link>
-  
+            </Link>  
         </div>
     )
 }
