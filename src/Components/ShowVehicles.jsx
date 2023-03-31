@@ -10,14 +10,14 @@ function ShowVehicles (){
                     Em destaque
                 </h1>
             </div>
-            <div className="flex flex-col md:flex-row justify-center items-center gap-4 py-4 ">               
+            <div className="flex flex-col md:flex-row justify-center items-center gap-8 py-4 ">               
                 <div className="w-full md:w-auto bg-gray-100 ">
                     <Link to="/comprar" state={carData.car1}>
                         {
                             //Linka para a proxima pagina de comprar e passa o dado do veiculo escolhido pelo usuario
                         }
                         <img
-                        className="w-full md:w-64 h-48 object-cover"
+                        className="w-full md:w-64 h-48  object-cover"
                         src={carData.car1.photo_1}
                         alt="corolla2000"
                         />
@@ -112,7 +112,7 @@ function ShowVehicles (){
                 </div>                              
             </div>
             <Link to="/all">
-                <h2 className=" text-blue-600 hover:text-red-600 font-bold text-3xl ">Todos veiculos</h2>
+                <h2 className=" text-blue-600 hover:text-red-600 font-bold text-3xl px-2">Todos veiculos</h2>
             </Link>  
         </div>
     )

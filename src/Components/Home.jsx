@@ -1,3 +1,4 @@
+import BottomInfo from "./BottomInfo";
 import MenuModelos from "./MenuModelos";
 import ShowVehicles from "./ShowVehicles";
 import TopInfo from "./TopInfo";
@@ -9,7 +10,8 @@ function Home(){
             <TopMenu />
             <TopInfo />
             <MenuModelos />
-            <ShowVehicles />            
+            <ShowVehicles />
+            <BottomInfo/>            
         </div>
     )
 
