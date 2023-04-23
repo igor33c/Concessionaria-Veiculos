@@ -1,8 +1,10 @@
+import { useState } from "react"
 import carData from "./Vehicles/VehiclesList"
 // importacao de dados de veiculos
 import { Link } from "react-router-dom"
 
-function ShowVehicles (){    
+function ShowVehicles (){     
+    
     return(
         <div className="px-4 py-8">
             <div className="text-center mt-4 mb-4">
@@ -111,9 +113,11 @@ function ShowVehicles (){
                     </div>                
                 </div>                              
             </div>
-            <Link to="/all">
-                <h2 className=" text-blue-600 hover:text-red-600 font-bold text-3xl px-2">Todos veiculos</h2>
-            </Link>  
+            <div>
+                <Link to="/all">
+                    <p className=" text-blue-600 hover:text-red-600 font-bold text-3xl px-2 inline-block">Todos veiculos</p>
+                </Link>
+            </div>  
         </div>
     )
 }
