@@ -1,4 +1,4 @@
-import { useState } from "react"
+import { useState} from "react"
 import BottomInfo from "../BottomInfo"
 import MenuModelos from "../MenuModelos"
 import TopInfo from "../TopInfo"
@@ -6,11 +6,34 @@ import TopMenu from "../TopMenu"
 import carData from "./VehiclesList"
 import { Link } from "react-router-dom"
 
-function AllVehicles (){
-
-    const [showOrdenar, setShowOrdenar] = useState()
-    const allData = carData
-    // atribuindo allData para mostrar dados de carData    
+function AllVehicles (){       
+    const [showOrdenar, setShowOrdenar] = useState(false);
+    const [ordenar, setOrdenar] = useState("Padrão");
+    const [allData, setAllData] = useState(Object.values(carData)); // recebendo obj de carData
+    //necessario usar setState para poder alterar allData
+   
+    const handleClickButton = (newOrdenar) => {
+        setOrdenar(newOrdenar);//mudando o botao para mostrar a opcao desejada            
+        let sortedData = [...allData]//inicializacao
+       
+        // escolhendo metodo de ordenacao
+            switch (newOrdenar) {
+                case ("Menor Preço"):
+                    console.log('menor')
+                    sortedData.sort((a, b) => a.preco - b.preco)//ordenando por menor
+                    break                 
+                case ("Maior Preço"):
+                    sortedData.sort((a, b) => b.preco - a.preco)//ordenacao por maior 
+                    break
+                case ("Padrão"):
+                    sortedData = Object.values(carData)//definicao padrao como veio do obj
+                    break
+                default:
+                    break
+            }  
+        setAllData(sortedData);
+    }  
+        
     return(
         <div>
             <TopMenu />
@@ -21,29 +44,36 @@ function AllVehicles (){
                     <span className="py-4 px-8">Ordenar por:</span>
                     <button className="bg-transparent hover:border-gray-600 hover:text-gray-500 mt-1" 
                         onClick={() => setShowOrdenar(!showOrdenar)}>                        
-                        Menu
+                        {ordenar}
                     </button>
                     {showOrdenar && 
                             (
-                                <ul className="absolute top-10 left-0 bg-gray-500 rounded-lg py-1 px-3 
+                                <ul className="absolute left-20 bg-gray-500 rounded-lg py-1 px-3 
                                                flex flex-col items-center"
                                 >
-                                    <li className="mb-2">
-                                        <Link to ="/about">
-                                        <button className="text-white bg-transparent px-3 
-                                        hover:text-gray-300 text-sm "
-                                        >
-                                            Menor Preçi
-                                        </button>
-                                        </Link>
-                                    </li>
-                                    <li className="mb-2">
-                                        <button className="text-white bg-transparent px-3 
+                                    <button 
+                                        className="text-white bg-transparent px-3 
+                                        hover:text-gray-100 text-sm "
+                                        onClick={() => handleClickButton('Menor Preço')}
+                                    >
+                                        Menor Preço
+                                    </button>
+
+                                    <button 
+                                        className="text-white bg-transparent px-3 
                                         hover:text-gray-200 text-sm "
-                                        >
-                                            Maior Preço
-                                        </button>
-                                    </li>     
+                                        onClick={() => handleClickButton('Maior Preço')}
+                                    >
+                                        Maior Preço
+                                    </button>
+
+                                    <button 
+                                        className="text-white bg-transparent px-3 
+                                        hover:text-gray-200 text-sm "
+                                        onClick={() => handleClickButton('Padrão')}
+                                    >
+                                        Padrão
+                                    </button>              
                                 </ul>
                             )
                         }
@@ -52,10 +82,7 @@ function AllVehicles (){
                 <div className=" px-8 car grid grid-cols-1 
                                 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 
                                 xl:grid-cols-4 gap-4 sm:gap-6 md:gap-8 lg:gap-10 xl:gap-12 py-24"
-                >   
-                    
-                             
-                    
+                >      
                     {
                         Object.keys(allData).map(
                             (carId) => 
@@ -94,5 +121,4 @@ function AllVehicles (){
         </div>
     )
 }
-
 export default AllVehicles
