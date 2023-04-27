@@ -33,7 +33,7 @@ function Honda(){
                                 Kilometragem: {hondaCars[carId].km}
                         </p>
                         <p>
-                                Preço: R${hondaCars[carId].preco.toFixed(2)}
+                                Preço: R${hondaCars[carId].preco.toLocaleString('pt-BR', {minimumFractionDigits: 2})}
                         </p>
                         <Link to="/comprar" state={hondaCars[carId]}>
                             <img src={hondaCars[carId].photo_1}  alt={hondaCars[carId.marca]} 

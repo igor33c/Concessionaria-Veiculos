@@ -1,4 +1,3 @@
-import { useState } from "react"
 import carData from "./Vehicles/VehiclesList"
 // importacao de dados de veiculos
 import { Link } from "react-router-dom"
@@ -35,7 +34,7 @@ function ShowVehicles (){
                             {carData.car1.km}km
                         </p>
                         <p className="font-bold text-lg text-blue-500">
-                            R${carData.car1.preco}
+                            R${carData.car1.preco.toLocaleString('pt-BR', {minimumFractionDigits: 2})}
                         </p>
                     </div>                    
                 </div> 
@@ -59,7 +58,7 @@ function ShowVehicles (){
                             {carData.car2.km}km
                         </p>
                         <p className="font-bold text-lg text-blue-500">
-                            R${carData.car2.preco}
+                            R${carData.car2.preco.toLocaleString('pt-BR', {minimumFractionDigits: 2})}
                         </p>
                     </div>
                 
@@ -84,7 +83,7 @@ function ShowVehicles (){
                             {carData.car3.km}km
                         </p>
                         <p className="font-bold text-lg text-blue-500">
-                            R${carData.car3.preco}
+                            R${carData.car3.preco.toLocaleString('pt-BR', {minimumFractionDigits: 2})}
                         </p>
                     </div>
                 
@@ -108,7 +107,7 @@ function ShowVehicles (){
                             {carData.car4.km}km
                         </p>
                         <p className="font-bold text-lg text-blue-500">
-                            R${carData.car4.preco}
+                            R${carData.car4.preco.toLocaleString('pt-BR', {minimumFractionDigits: 2})}
                         </p>
                     </div>                
                 </div>                              

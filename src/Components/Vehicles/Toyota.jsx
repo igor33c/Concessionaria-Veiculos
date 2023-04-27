@@ -29,7 +29,7 @@ function Toyota (){
                         }
                         <p>Ano: {toyotaCars[carId].ano}</p>
                         <p>Kilometragem: {toyotaCars[carId].km}</p>
-                        <p>Preço: R${toyotaCars[carId].preco.toFixed(2)}</p>
+                        <p>Preço: R${toyotaCars[carId].preco.toLocaleString('pt-BR', {minimumFractionDigits: 2})}</p>
                         <Link to="/comprar" state={toyotaCars[carId]}>
                             <img src={toyotaCars[carId].photo_1}  alt="" className="w-64 h-40"/> 
                         </Link>                   

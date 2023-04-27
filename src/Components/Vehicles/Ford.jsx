@@ -26,7 +26,7 @@ function Ford (){
                             }
                             <p>Ano: {fordCars[carId].ano}</p>
                             <p>Kilometragem: {fordCars[carId].km}</p>
-                            <p>Preço: R${fordCars[carId].preco.toFixed(2)}</p>
+                            <p>Preço: R${fordCars[carId].preco.toLocaleString('pt-BR', {minimumFractionDigits: 2})}</p>
                             <Link to="/comprar" state={fordCars[carId]}>
                                 <img src={fordCars[carId].photo_1}  alt="" className="w-36 h-24"/>
                             </Link>                    

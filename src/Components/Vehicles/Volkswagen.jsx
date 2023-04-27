@@ -31,7 +31,7 @@ function Volskwagen (){
                             Kilometragem: {volksCars[carId].km}
                         </p>
                         <p>
-                            Preço: R${volksCars[carId].preco.toFixed(2)}
+                            Preço: R${volksCars[carId].preco.toLocaleString('pt-BR', {minimumFractionDigits: 2})}
                         </p>
                         <Link to="/comprar" state={volksCars[carId]}>
                             <img src={volksCars[carId].photo_1}  alt={volksCars[carId.marca]} 

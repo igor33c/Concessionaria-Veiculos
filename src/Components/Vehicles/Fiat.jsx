@@ -28,7 +28,7 @@ function Fiat (){
                         }
                         <p>Ano: {fiatCars[carId].ano}</p>
                         <p>Kilometragem: {fiatCars[carId].km}</p>
-                        <p>Preço: R${fiatCars[carId].preco.toFixed(2)}</p>
+                        <p>Preço: R${fiatCars[carId].preco.toLocaleString('pt-BR', {minimumFractionDigits: 2})}</p>
                         <Link to="/comprar" state={fiatCars[carId]}>
                         <img src={fiatCars[carId].photo_1}  alt="" className="w-36 h-24"/>
                         </Link>                    

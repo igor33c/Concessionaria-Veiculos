@@ -31,7 +31,7 @@ function Chevrolet (){
                                     Kilometragem: {chevroletCars[carId].km}
                             </p>
                             <p>
-                                    Preço: R${chevroletCars[carId].preco.toFixed(2)}
+                                    Preço: R${chevroletCars[carId].preco.toLocaleString('pt-BR', {minimumFractionDigits: 2})}
                             </p>
                             <Link to="/comprar" state={chevroletCars[carId]}>
                                 <img src={chevroletCars[carId].photo_1}  alt={chevroletCars[carId.marca]} 

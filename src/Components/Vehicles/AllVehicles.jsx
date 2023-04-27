@@ -13,7 +13,7 @@ function AllVehicles (){
     //necessario usar setState para poder alterar allData
    
     const handleClickButton = (newOrdenar) => {
-        setOrdenar(newOrdenar);//mudando o botao para mostrar a opcao desejada            
+        setOrdenar(newOrdenar);//monstrado botao com mostrar a opcao desejada            
         let sortedData = [...allData]//inicializacao
        
         // escolhendo metodo de ordenacao
@@ -32,14 +32,13 @@ function AllVehicles (){
                     break
             }  
         setAllData(sortedData);
-    }  
-        
+    }          
     return(
         <div>
             <TopMenu />
             <TopInfo />
             <MenuModelos />
-            <div className="bg-gradient-to-br from-blue-200 to-violet-300">
+            <div className="bg-gradient-to-br from-blue-100 to-violet-200">
                 <div>
                     <span className="py-4 px-8">Ordenar por:</span>
                     <button className="bg-transparent hover:border-gray-600 hover:text-gray-500 mt-1" 
@@ -78,7 +77,6 @@ function AllVehicles (){
                             )
                         }
                 </div> 
-
                 <div className=" px-8 car grid grid-cols-1 
                                 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 
                                 xl:grid-cols-4 gap-4 sm:gap-6 md:gap-8 lg:gap-10 xl:gap-12 py-24"
@@ -108,7 +106,8 @@ function AllVehicles (){
                                                 Kilometragem: {allData[carId].km}
                                             </p>
                                             <p className="font-bold text-lg text-blue-500">
-                                                Preço: R${allData[carId].preco.toFixed(2)}
+                                                Preço: R${allData[carId].preco.toLocaleString
+                                                         ('pt-BR', {minimumFractionDigits: 2})}
                                             </p>
                                         </div>                                    
                                     </div>                                    
