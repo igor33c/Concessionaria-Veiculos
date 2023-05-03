@@ -2,8 +2,7 @@ import carData from "./Vehicles/VehiclesList"
 // importacao de dados de veiculos
 import { Link } from "react-router-dom"
 
-function ShowVehicles (){     
-    
+function ShowVehicles (){         
     return(
         <div className="px-4 py-8">
             <div className="text-center mt-4 mb-4">

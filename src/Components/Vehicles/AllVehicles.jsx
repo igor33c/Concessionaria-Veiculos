@@ -34,7 +34,7 @@ function AllVehicles (){
         setAllData(sortedData);
     }          
     return(
-        <div>
+        <>
             <TopMenu />
             <TopInfo />
             <MenuModelos />
@@ -117,7 +117,7 @@ function AllVehicles (){
                 </div>
             </div>
             <BottomInfo />
-        </div>
+        </>
     )
 }
 export default AllVehicles

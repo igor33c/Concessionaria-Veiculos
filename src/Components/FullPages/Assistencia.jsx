@@ -7,6 +7,7 @@ function Assistencia() {
     const [phone, setPhone] = useState('');
   
     function formatPhone(value) {
+        
       // remover nao numericos
       const phone = value.replace(/\D/g, '');
   
@@ -18,7 +19,7 @@ function Assistencia() {
   
       // formatando para formato cel
       let formattedPhone = phone.substring(0, 11);
-      formattedPhone = 
+      formattedPhone =
       `(${formattedPhone.substring(0, 2)})${formattedPhone.substring(2, 7)}-${formattedPhone.substring(7)}`;
       
       return formattedPhone;

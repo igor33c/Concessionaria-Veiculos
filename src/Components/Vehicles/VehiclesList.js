@@ -48,7 +48,7 @@ const carData = {
     {
         id : '#02',
         marca : 'Honda',
-        modelo: 'Civic',
+        modelo: 'Civic 2.0',
         ano: 2020,
         km: 18432,
         preco: 132019, 
