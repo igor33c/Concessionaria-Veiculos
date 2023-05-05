@@ -11,20 +11,23 @@ function BottomInfo (){
                     </div>                
                     <div className="px-8">
                         <Link to="/about">    
-                            <p className="hover:text-red-800">Sobre Nós</p>
+                            <p className="hover:text-red-600">Sobre Nós</p>
                         </Link>
                         <Link to="/local">
-                            <p className="hover:text-red-800">Nossa Localização</p>
+                            <p className="hover:text-red-600">Nossa Localização</p>
                         </Link>
                         <Link to="/trabalhe">
-                            <p className="hover:text-red-800">Trabalhe Conosco</p>
+                            <p className="hover:text-red-600">Trabalhe Conosco</p>
                         </Link>
                         <Link to="/contato">
-                            <p className="hover:text-red-800">Contato</p> 
+                            <p className="hover:text-red-600">Contato</p> 
                         </Link>                   
                     </div>                   
                 </div>
             </footer>
+            <div className="px-12 bg-green-100">
+                <span className="text-gray-800">Thunderstorm Concessionária® | Todos direitos reservados | Desenvolvido por Igor Augusto</span>
+            </div>
         </>
     )
 }

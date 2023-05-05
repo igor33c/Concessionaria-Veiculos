@@ -91,8 +91,7 @@ function AllVehicles (){
                                     ///div para cada veiculo ser mostrado separadamente
                                     }
                                         <Link to="/comprar" state={allData[carId]}> 
-                                            <img src={allData[carId].photo_1}  alt="" className="w-full md:w-64 h-48  
-                                                                                                object-cover"
+                                            <img src={allData[carId].photo_1}  alt="" className="object-cover w-full h-44 mx-auto"
                                             />
                                         </Link> 
                                         <div className=" p-2 text-center">
