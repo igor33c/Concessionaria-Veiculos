@@ -54,7 +54,10 @@ function AllVehicles (){
                                         className="text-white bg-transparent px-3 
                                         hover:text-gray-100 text-sm "
                                         onClick={() => handleClickButton('Menor Preço')}
+                                        
                                     >
+                                        {/* muda ordem chamando handleclickbutton*/} 
+                                        
                                         Menor Preço
                                     </button>
 
@@ -63,6 +66,7 @@ function AllVehicles (){
                                         hover:text-gray-200 text-sm "
                                         onClick={() => handleClickButton('Maior Preço')}
                                     >
+                                        {/* muda ordem chamando handleclickbutton*/} 
                                         Maior Preço
                                     </button>
 
@@ -71,6 +75,7 @@ function AllVehicles (){
                                         hover:text-gray-200 text-sm "
                                         onClick={() => handleClickButton('Padrão')}
                                     >
+                                        {/* muda ordem chamando handleclickbutton*/} 
                                         Padrão
                                     </button>              
                                 </ul>

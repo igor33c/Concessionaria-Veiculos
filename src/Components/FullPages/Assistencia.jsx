@@ -1,11 +1,11 @@
-import MenuModelos from "../../Components/MenuModelos";
-import TopInfo from "../../Components/TopInfo";
-import TopMenu from "../../Components/TopMenu";
+import MenuModelos from "../MenuModelos";
+import TopInfo from "../TopInfo";
+import TopMenu from "../TopMenu";
 import { useState } from "react";
+import BottomInfo from "../BottomInfo";
 
 function Assistencia() {
-    const [phone, setPhone] = useState('');
-  
+    const [phone, setPhone] = useState('');  
     function formatPhone(value) {
         
       // remover nao numericos
@@ -23,14 +23,13 @@ function Assistencia() {
       `(${formattedPhone.substring(0, 2)})${formattedPhone.substring(2, 7)}-${formattedPhone.substring(7)}`;
       
       return formattedPhone;
-    }
-  
+    }  
     function handleChange(e) {
       const formattedPhone = formatPhone(e.target.value);
       setPhone(formattedPhone);
 }
     return(
-        <div>
+        <>
             <TopMenu />
             <TopInfo />
             <MenuModelos />            
@@ -44,7 +43,7 @@ function Assistencia() {
                             Preencha o Formulário abaixo:
                         </h2>
                     </div>
-                    <div>
+                    <div className="pt-4">
                         <form>
                             <div className="py-1">
                                 <label >
@@ -82,17 +81,40 @@ function Assistencia() {
                                             value={phone} 
                                             onChange={handleChange} 
                                             pattern="\([0-9]{2}\) [0-9]{5}-[0-9]{4}" 
-                                            required 
+                                             
                                         />
                                     </div>
                                 </label>
                             </div>
+                            <div className="py-1">
+                                <label for="tel">
+                                    Resuma o que você precisa:
+                                    <div>
+                                        <textarea 
+                                            name="" 
+                                            id="" 
+                                            cols="30" 
+                                            rows="5">                                            
+                                        </textarea>
+                                    </div>
+                                </label>
+                            </div>
+                            <div className="py-2">
+                                <button 
+                                    className="text-slate-900 bg-blue-200 hover:bg-blue-300 focus:ring-4 
+                                               focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5
+                                                 focus:outline-none"                                                
+                                    type="button"
+                                >
+                                    Enviar
+                                </button>
+                            </div>
                         </form>
                     </div>  
                 </div>
-            </div>    
-        </div>
+            </div>
+            <BottomInfo />   
+        </>
     )    
 }
-
 export default Assistencia

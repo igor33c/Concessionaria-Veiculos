@@ -4,6 +4,7 @@ import TopMenu from "../TopMenu"
 import * as React from 'react';
 import { useLocation } from 'react-router-dom';
 import { useState } from "react";
+import BottomInfo from "../BottomInfo";
 
 function Buying() {
     const location = useLocation()// usa o UseLocation para receber dados enviados
@@ -12,7 +13,7 @@ function Buying() {
     const carInfo = location.state // setta carInfo com os dados do veiculo escolhido usando o location.state
     console.log(carInfo.modelo) 
     return (
-      <div>
+      <>
           <TopMenu />
           <TopInfo />
           <MenuModelos />
@@ -21,7 +22,8 @@ function Buying() {
                 <div className="flex"> 
                 </div>  
           </div>
-      </div>
+          <BottomInfo />
+      </>
     );
   
 }
