@@ -4,8 +4,30 @@ import TopMenu from "../TopMenu";
 import { useState } from "react";
 import BottomInfo from "../BottomInfo";
 
+
 function Assistencia() {
-    const [phone, setPhone] = useState('');  
+    
+    const [nome, setNome] = useState('')
+    const [phone, setPhone] = useState('')
+    const [email, setEmail] = useState('')
+    const [text, setText] = useState('')
+
+    function handleChangeName(e){
+        setNome(e.target.value)
+    }
+    function handleChangeEmail(e){
+        setEmail(e.target.value)
+    }
+    function handleChangeText(e){
+        setText(e.target.value)
+    }  
+
+    function handleSubmit(){
+        // receberá os dados
+        console.log(nome, phone, email, text)
+        // {...}
+    }
+
     function formatPhone(value) {
         
       // remover nao numericos
@@ -46,39 +68,39 @@ function Assistencia() {
                     <div className="pt-4">
                         <form>
                             <div className="py-1">
-                                <label >
+                                <label htmlFor="Nome">
                                     Seu Nome:
                                     <div>
                                         <input
-                                            name="isGoing"
+                                            value={nome}
                                             type="text"
+                                            onChange={handleChangeName} 
                                         />
                                     </div>
                                 </label>
                             </div>
                             <div className="py-1 flex">   
-                                <label 
-                                    for="email">
+                                <label htmlFor="email">
                                     Seu e-mail:
                                     <div className="">
                                         <input                                    
                                             type="email"
                                             id="email"
-                                            name="email"
+                                            value={email}
+                                            onChange={handleChangeEmail}
                                         />
                                     </div> 
                                 </label>
                             </div> 
                             <div className="py-1">
-                                <label for="tel">
+                                <label htmlFor="tel">
                                     Seu Celular:
                                     <div>
                                         <input
                                             className="px-1" 
                                             type="tel" 
                                             id="phone" 
-                                            name="phone" 
-                                            value={phone} 
+                                            value={phone}                                            
                                             onChange={handleChange} 
                                             pattern="\([0-9]{2}\) [0-9]{5}-[0-9]{4}" 
                                              
@@ -87,14 +109,18 @@ function Assistencia() {
                                 </label>
                             </div>
                             <div className="py-1">
-                                <label for="tel">
+                                <label htmlFor="tel">
                                     Resuma o que você precisa:
                                     <div>
                                         <textarea 
                                             name="" 
                                             id="" 
                                             cols="30" 
-                                            rows="5">                                            
+                                            rows="5"
+                                            value={text}
+                                            onChange={handleChangeText}
+                                        >
+                                                                                        
                                         </textarea>
                                     </div>
                                 </label>
@@ -104,7 +130,8 @@ function Assistencia() {
                                     className="text-slate-900 bg-blue-200 hover:bg-blue-300 focus:ring-4 
                                                focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5
                                                  focus:outline-none"                                                
-                                    type="button"
+                                    type="submit"
+                                    onClick={handleSubmit}
                                 >
                                     Enviar
                                 </button>

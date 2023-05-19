@@ -22,33 +22,35 @@ function TopMenu (){
                                 >
                                     <li className="mb-2">
                                         <Link to ="/about">
-                                        <button className="text-white bg-transparent px-3 
+                                        <span className="text-white bg-transparent px-3 
                                         hover:text-gray-300 text-sm "
                                         >
                                             Sobre  Nós
-                                        </button>
+                                        </span>
                                         </Link>
                                     </li>
                                     <li className="mb-2">
-                                        <button className="text-white bg-transparent px-3 
+                                        <span className="text-white bg-transparent px-3 
                                         hover:text-gray-200 text-sm "
                                         >
                                             Contato
-                                        </button>
+                                        </span>
                                     </li>
                                     <li className="mb-2">
-                                        <button className="text-white bg-transparent px-3 
+                                        <span className="text-white bg-transparent px-3 
                                         hover:text-gray-200 text-sm "
                                         >
                                             Trabalhe Conosco
-                                        </button>
+                                        </span>
                                     </li>
                                     <li>
-                                        <button className="text-white bg-transparent px-3 
-                                        hover:text-gray-200 text-sm "
+                                        <span 
+                                            className="text-white bg-transparent px-3 
+                                            hover:text-gray-200 text-sm "
+                                            onClick={""}
                                         >
                                             Localização
-                                        </button>
+                                        </span>
                                     </li>
                                 </ul>
                             )
