@@ -6,13 +6,13 @@ import TopMenu from "./TopMenu";
 
 function Home(){
     return(
-        <div>
+        <>
             <TopMenu />
             <TopInfo />
             <MenuModelos />
             <ShowVehicles />
             <BottomInfo/>            
-        </div>
+        </>
     )
 
 }
