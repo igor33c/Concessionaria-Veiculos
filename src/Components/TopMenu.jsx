@@ -37,7 +37,7 @@ function TopMenu (){
                                         </span>
                                     </li>
                                     <li className="mb-2">
-                                        <span className="text-white bg-transparent px-3 
+                                        <span className="flex text-white bg-transparent px-3 
                                         hover:text-gray-200 text-sm "
                                         >
                                             Trabalhe Conosco
@@ -56,7 +56,6 @@ function TopMenu (){
                             )
                         }
                 </div>
-
             </div>
         </div>
     )

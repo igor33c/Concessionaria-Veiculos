@@ -59,84 +59,103 @@ function Assistencia() {
                 <h1 className="justif-center items-center text-center text-blue-500 font-bold text-5xl">
                     Assistencia Técnica
                 </h1>
-                <div className="px-4 py-8">
-                    <div className="pt-8">
-                        <h2 className="text-red-500 font-bold text-2xl">
-                            Preencha o Formulário abaixo:
-                        </h2>
-                    </div>
-                    <div className="pt-4">
-                        <form>
-                            <div className="py-1">
-                                <label htmlFor="Nome">
-                                    Seu Nome:
-                                    <div>
-                                        <input
-                                            value={nome}
-                                            type="text"
-                                            onChange={handleChangeName} 
-                                        />
+                <div className="px-4 py-8">                   
+                    <div className="pt-4 py-8">                        
+                        <div className="grid grid-cols-2 gap-4">
+                            <div className="border-gray-200 border-solid border-2 px-4
+                                            bg-gradient-to-br from-green-100 to-blue-200"
+                            >
+                                <h2 className="text-red-500 font-bold text-2xl">
+                                    Preencha o Formulário abaixo:
+                                </h2>
+                                <form>
+                                    <div className="py-1">
+                                        <label htmlFor="Nome">
+                                            Seu Nome:
+                                            <div>
+                                                <input
+                                                    value={nome}
+                                                    type="text"
+                                                    onChange={handleChangeName} 
+                                                />
+                                            </div>
+                                        </label>
                                     </div>
-                                </label>
-                            </div>
-                            <div className="py-1 flex">   
-                                <label htmlFor="email">
-                                    Seu e-mail:
-                                    <div className="">
-                                        <input                                    
-                                            type="email"
-                                            id="email"
-                                            value={email}
-                                            onChange={handleChangeEmail}
-                                        />
+                                    <div className="py-1 flex">   
+                                        <label htmlFor="email">
+                                            Seu e-mail:
+                                            <div className="">
+                                                <input                                    
+                                                    type="email"
+                                                    id="email"
+                                                    value={email}
+                                                    onChange={handleChangeEmail}
+                                                />
+                                            </div> 
+                                        </label>
                                     </div> 
-                                </label>
-                            </div> 
-                            <div className="py-1">
-                                <label htmlFor="tel">
-                                    Seu Celular:
-                                    <div>
-                                        <input
-                                            className="px-1" 
-                                            type="tel" 
-                                            id="phone" 
-                                            value={phone}                                            
-                                            onChange={handleChange} 
-                                            pattern="\([0-9]{2}\) [0-9]{5}-[0-9]{4}" 
-                                             
-                                        />
+                                    <div className="py-1">
+                                        <label htmlFor="tel">
+                                            Seu Celular:
+                                            <div>
+                                                <input
+                                                    className="px-1" 
+                                                    type="tel" 
+                                                    id="phone" 
+                                                    value={phone}                                            
+                                                    onChange={handleChange} 
+                                                    pattern="\([0-9]{2}\) [0-9]{5}-[0-9]{4}" 
+                                                    
+                                                />
+                                            </div>
+                                        </label>
                                     </div>
-                                </label>
-                            </div>
-                            <div className="py-1">
-                                <label htmlFor="tel">
-                                    Resuma o que você precisa:
-                                    <div>
-                                        <textarea 
-                                            name="" 
-                                            id="" 
-                                            cols="30" 
-                                            rows="5"
-                                            value={text}
-                                            onChange={handleChangeText}
+                                    <div className="py-1">
+                                        <label htmlFor="tel">
+                                            Resuma o que você precisa:
+                                            <div>
+                                                <textarea 
+                                                    name="" 
+                                                    id="" 
+                                                    cols="30" 
+                                                    rows="5"
+                                                    value={text}
+                                                    onChange={handleChangeText}
+                                                >
+                                                                                                
+                                                </textarea>
+                                            </div>
+                                        </label>
+                                    </div>
+                                    <div className="py-2">
+                                        <button 
+                                            className="text-slate-900 bg-blue-200 hover:bg-blue-300 focus:ring-4 
+                                                    focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5
+                                                        focus:outline-none"                                                
+                                            type="submit"
+                                            onClick={handleSubmit}
                                         >
-                                                                                        
-                                        </textarea>
+                                            Enviar
+                                        </button>
                                     </div>
-                                </label>
+                                </form>
                             </div>
-                            <div className="py-2">
-                                <button 
-                                    className="text-slate-900 bg-blue-200 hover:bg-blue-300 focus:ring-4 
-                                               focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5
-                                                 focus:outline-none"                                                
-                                    type="submit"
-                                    onClick={handleSubmit}
-                                >
-                                    Enviar
-                                </button>
+                            <div className="border-gray-200 border-solid border-2 px-4
+                                            bg-gradient-to-br from-green-100 to-blue-200"
+                            >      
+                                <div>
+                                    <h2>
+                                        Contato
+                                    </h2>
+                                </div>
+                                <div>
+                                    {
+                                        ///...
+                                    }
+                                </div>                                
                             </div>
-                        </form>
+                        </div>
+                        
                     </div>  
                 </div>
             </div>

@@ -17,7 +17,7 @@ function Ford (){
             <MenuModelos />
             <div className="bg-gradient-to-r from-slate-100 to-slate-200">
                 <div className="w-full py-4">
-                        <h1 className="text-center justify-center">Modelos Ford</h1>
+                        <h1 className="text-blue-500 font-bold text-lg md:text-4xl text-center justify-center">Modelos Ford</h1>
                 </div>          
                 <div className="px-8  car grid grid-cols-1 
                                 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 
