@@ -1,4 +1,4 @@
-import thunder from'../images/thunder.png'
+import thunder from '../images/thunder.png'
 
 function TopInfo () {
     return(

@@ -3,6 +3,8 @@ import TopInfo from "../TopInfo";
 import TopMenu from "../TopMenu";
 import { useState } from "react";
 import BottomInfo from "../BottomInfo";
+import whats from "../../images/whats.png"
+import phoneImg from "../../images/phone.png"
 
 
 function Assistencia() {
@@ -144,15 +146,33 @@ function Assistencia() {
                                             bg-gradient-to-br from-green-100 to-blue-200"
                             >      
                                 <div>
-                                    <h2>
-                                        Contato
+                                    <h2 className="text-green-500 font-bold text-2xl">
+                                        Contato especializado:
                                     </h2>
                                 </div>
-                                <div>
-                                    {
-                                        ///...
-                                    }
-                                </div>                                
+                                <div className="flex">
+                                    <div className="mt-4 mr-4 pt-6 pr-2 border-solid border-gray-200 border-2 
+                                                    flex items-start rounded-2xl"
+                                    >
+                                        <div className="-mt-6 pr-2">
+                                            <img src={phoneImg} alt="" className="w-16 h-16" />
+                                        </div>
+                                        <div>
+                                            <h3 className="text-green-800 text-2xl">(18)3000-0000 </h3>
+                                        </div>
+                                    </div>
+                                    <div className="mt-4 pt-6 pr-2 border-solid border-gray-200 border-2 
+                                                    flex items-start rounded-2xl ml-4"
+                                    >
+                                        <div className="-mt-6 pr-2">
+                                            <img src={whats} alt="" className="w-16 h-16" />
+                                        </div>
+                                        <div>
+                                            <h3 className="text-green-800 text-2xl">(18)99899-9999 </h3>                                            
+                                        </div>
+                                    </div>
+                                </div>
+                              
                             </div>
                         </div>
                         
