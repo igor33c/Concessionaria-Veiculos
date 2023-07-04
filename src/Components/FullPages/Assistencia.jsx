@@ -57,13 +57,13 @@ function Assistencia() {
             <TopMenu />
             <TopInfo />
             <MenuModelos />            
-            <div className="px-4 py-8 bg-gradient-to-br from-green-50 to-blue-100 ">
-                <h1 className="justif-center items-center text-center text-blue-500 font-bold text-5xl">
+            <div className="p-4 py-8 bg-gradient-to-br from-green-50 to-blue-100">
+                <h1 className="justify-center items-center text-center text-blue-500 font-bold text-3xl">
                     Assistencia Técnica
                 </h1>
                 <div className="px-4 py-8">                   
                     <div className="pt-4 py-8">                        
-                        <div className="grid grid-cols-2 gap-4">
+                        <div className="grid md:grid-cols-2 gap-4">
                             <div className="border-gray-200 border-solid border-2 px-4
                                             bg-gradient-to-br from-green-100 to-blue-200"
                             >
@@ -119,9 +119,9 @@ function Assistencia() {
                                                 <textarea 
                                                     name="" 
                                                     id="" 
-                                                    cols="30" 
+                                                    cols="25" 
                                                     rows="5"
-                                                    value={text}
+                                                    className="w-full"
                                                     onChange={handleChangeText}
                                                 >
                                                                                                 
@@ -132,7 +132,7 @@ function Assistencia() {
                                     <div className="py-2">
                                         <button 
                                             className="text-slate-900 bg-blue-200 hover:bg-blue-300 focus:ring-4 
-                                                    focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5
+                                                    focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 w-full
                                                         focus:outline-none"                                                
                                             type="submit"
                                             onClick={handleSubmit}
@@ -142,8 +142,8 @@ function Assistencia() {
                                     </div>
                                 </form>
                             </div>
-                            <div className="border-gray-200 border-solid border-2 px-4
-                                            bg-gradient-to-br from-green-100 to-blue-200"
+                            <div className="border-gray-200 border-solid border px-4
+                                            bg-gradient-to-br from-green-100 to-blue-200 pb-2"
                             >      
                                 <div>
                                     <h2 className="text-green-500 font-bold text-2xl">
@@ -151,8 +151,8 @@ function Assistencia() {
                                     </h2>
                                 </div>
                                 <div className="flex">
-                                    <div className="mt-4 mr-4 pt-6 pr-2 border-solid border-gray-200 border-2 
-                                                    flex items-start rounded-2xl"
+                                    <div className="mt-4 pt-6 pr-2 border-solid border-gray-200 border 
+                                                    flex items-start rounded-2xl mr-4"
                                     >
                                         <div className="-mt-6 pr-2">
                                             <img src={phoneImg} alt="" className="w-16 h-16" />
@@ -161,7 +161,7 @@ function Assistencia() {
                                             <h3 className="text-green-800 text-2xl">(18)3000-0000 </h3>
                                         </div>
                                     </div>
-                                    <div className="mt-4 pt-6 pr-2 border-solid border-gray-200 border-2 
+                                    <div className="mt-4 pt-6 pr-2 border-solid border-gray-200 border 
                                                     flex items-start rounded-2xl ml-4"
                                     >
                                         <div className="-mt-6 pr-2">
