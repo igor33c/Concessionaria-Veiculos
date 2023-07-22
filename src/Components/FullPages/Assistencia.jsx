@@ -155,7 +155,11 @@ function Assistencia() {
                                                     flex items-start rounded-2xl mr-4"
                                     >
                                         <div className="-mt-6 pr-2">
-                                            <img src={phoneImg} alt="" className="w-16 h-16" />
+                                        <img
+                                            src={phoneImg}
+                                            alt=""
+                                            className="w-12 h-12 md:w-16 md:h-16"
+                                        />
                                         </div>
                                         <div>
                                             <h3 className="text-green-800 text-2xl">(18)3000-0000 </h3>
@@ -165,14 +169,17 @@ function Assistencia() {
                                                     flex items-start rounded-2xl ml-4"
                                     >
                                         <div className="-mt-6 pr-2">
-                                            <img src={whats} alt="" className="w-16 h-16" />
+                                        <img
+                                            src={whats}
+                                            alt=""
+                                            className="w-12 h-12 md:w-16 md:h-16"
+                                        />
                                         </div>
                                         <div>
                                             <h3 className="text-green-800 text-2xl">(18)99899-9999 </h3>                                            
                                         </div>
                                     </div>
-                                </div>
-                              
+                                </div>                              
                             </div>
                         </div>
                         
