@@ -28,6 +28,17 @@ function Assistencia() {
         // receberá os dados
         console.log(nome, phone, email, text)
         // {...}
+        const array = {
+            nome: nome,
+            phone: phone,
+            email: email,
+            text: text            
+        }
+
+        console.log(array.nome)
+        console.log(array.phone)
+        console.log(array.email)
+        console.log(array.text)
     }
 
     function formatPhone(value) {
@@ -150,33 +161,31 @@ function Assistencia() {
                                         Contato especializado:
                                     </h2>
                                 </div>
-                                <div className="flex">
+                                <div className="flex flex-wrap justify-center md:justify-start">
                                     <div className="mt-4 pt-6 pr-2 border-solid border-gray-200 border 
-                                                    flex items-start rounded-2xl mr-4"
-                                    >
+                                                    flex items-start rounded-2xl mx-2 md:mr-4 md:ml-0">
                                         <div className="-mt-6 pr-2">
                                         <img
                                             src={phoneImg}
                                             alt=""
-                                            className="w-12 h-12 md:w-16 md:h-16"
+                                            className="w-12 h-12 md:w-16 md:h-16 max-w-full h-auto"
                                         />
                                         </div>
                                         <div>
-                                            <h3 className="text-green-800 text-2xl">(18)3000-0000 </h3>
+                                        <h3 className="text-green-800 text-base md:text-2xl">(18)3000-0000 </h3>
                                         </div>
                                     </div>
                                     <div className="mt-4 pt-6 pr-2 border-solid border-gray-200 border 
-                                                    flex items-start rounded-2xl ml-4"
-                                    >
+                                                    flex items-start rounded-2xl mx-2 md:ml-4 md:mr-0">
                                         <div className="-mt-6 pr-2">
                                         <img
                                             src={whats}
                                             alt=""
-                                            className="w-12 h-12 md:w-16 md:h-16"
+                                            className="w-12 h-12 md:w-16 md:h-16 max-w-full h-auto"
                                         />
                                         </div>
                                         <div>
-                                            <h3 className="text-green-800 text-2xl">(18)99899-9999 </h3>                                            
+                                        <h3 className="text-green-800 text-base md:text-2xl">(18)99899-9999 </h3>
                                         </div>
                                     </div>
                                 </div>                              
