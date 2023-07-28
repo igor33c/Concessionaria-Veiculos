@@ -1,13 +1,31 @@
 import MenuModelos from "../MenuModelos";
 import TopInfo from "../TopInfo";
 import TopMenu from "../TopMenu";
-import { useState } from "react";
 import BottomInfo from "../BottomInfo";
 import whats from "../../images/whats.png"
-import phoneImg from "../../images/phone.png"
+import phoneImg from "../../images/phone2.png"
 
+import { useState, useEffect } from "react";
 
 function Assistencia() {
+
+     useEffect(() => {
+    // Load the form data from localStorage when the component mounts
+    const storedFormData = JSON.parse(localStorage.getItem("formArray"));
+    if (storedFormData) {
+      setFormArray(storedFormData);
+    }
+    }, []);
+
+    const [formData, setFormData] = useState({
+        name: '',
+        phone: '',
+        email: '',
+        text: '',
+    })
+
+    const [formArray, setFormArray] = useState([]);
+
     
     const [nome, setNome] = useState('')
     const [phone, setPhone] = useState('')
@@ -24,22 +42,17 @@ function Assistencia() {
         setText(e.target.value)
     }  
 
-    function handleSubmit(){
-        // receberá os dados
-        console.log(nome, phone, email, text)
-        // {...}
-        const array = {
-            nome: nome,
-            phone: phone,
-            email: email,
-            text: text            
-        }
-
-        console.log(array.nome)
-        console.log(array.phone)
-        console.log(array.email)
-        console.log(array.text)
-    }
+    function handleSubmit(e) {
+        e.preventDefault();
+        setFormArray((prevFormArray) => [...prevFormArray, formData]);
+        setFormData({
+          name: "",
+          email: "",
+          phone: "",
+          text: "",
+        });        
+        console.log(formArray);
+      }
 
     function formatPhone(value) {
         
@@ -60,10 +73,26 @@ function Assistencia() {
       return formattedPhone;
     }  
     function handleChange(e) {
-      const formattedPhone = formatPhone(e.target.value);
-      setPhone(formattedPhone);
-}
-    return(
+        const formattedPhone = formatPhone(e.target.value);
+        setFormData((prevData) => ({
+            ...prevData,
+            name: nome,
+            phone: formattedPhone,
+            email: email,
+            text: text,
+          }));
+    
+    }
+
+   
+
+    useEffect(() => {
+    // Save the form data to localStorage whenever formArray changes
+    localStorage.setItem("formArray", JSON.stringify(formArray));
+  }, [formArray]);
+    
+  
+  return(
         <>
             <TopMenu />
             <TopInfo />
@@ -81,7 +110,7 @@ function Assistencia() {
                                 <h2 className="text-red-500 font-bold text-2xl">
                                     Preencha o Formulário abaixo:
                                 </h2>
-                                <form>
+                                <form onSubmit={handleSubmit}>
                                     <div className="py-1">
                                         <label htmlFor="Nome">
                                             Seu Nome:
@@ -115,10 +144,8 @@ function Assistencia() {
                                                     className="px-1" 
                                                     type="tel" 
                                                     id="phone" 
-                                                    value={phone}                                            
-                                                    onChange={handleChange} 
-                                                    pattern="\([0-9]{2}\) [0-9]{5}-[0-9]{4}" 
-                                                    
+                                                    value={formData.phone}                                            
+                                                    onChange={handleChange}
                                                 />
                                             </div>
                                         </label>
@@ -134,8 +161,7 @@ function Assistencia() {
                                                     rows="5"
                                                     className="w-full"
                                                     onChange={handleChangeText}
-                                                >
-                                                                                                
+                                                >                                                                                                
                                                 </textarea>
                                             </div>
                                         </label>
@@ -145,8 +171,7 @@ function Assistencia() {
                                             className="text-slate-900 bg-blue-200 hover:bg-blue-300 focus:ring-4 
                                                     focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 w-full
                                                         focus:outline-none"                                                
-                                            type="submit"
-                                            onClick={handleSubmit}
+                                            type="submit"                                            
                                         >
                                             Enviar
                                         </button>
@@ -188,13 +213,27 @@ function Assistencia() {
                                         <h3 className="text-green-800 text-base md:text-2xl">(18)99899-9999 </h3>
                                         </div>
                                     </div>
+                                    <div>
+                                        <h2>Stored Form Data</h2>
+                                        <ul>
+                                            {formArray.map((formData, index) => (
+                                            <li key={index}>
+                                                <strong>Name:</strong> {formData.name} <br />
+                                                <strong>Email:</strong> {formData.email} <br />
+                                                <strong>Phone:</strong> {formData.phone} <br />
+                                                <strong>Text:</strong> {formData.text} <br />
+                                                <hr />
+                                            </li>
+                                            ))}
+                                        </ul>
+                                    </div>
                                 </div>                              
                             </div>
                         </div>
                         
                     </div>  
                 </div>
-            </div>
+            </div>            
             <BottomInfo />   
         </>
     )    
