@@ -9,8 +9,9 @@ import { useState, useEffect } from "react";
 
 function Assistencia() {
 
-     useEffect(() => {
-    // Load the form data from localStorage when the component mounts
+    useEffect(() => {
+    //carregando form
+
     const storedFormData = JSON.parse(localStorage.getItem("formArray"));
     if (storedFormData) {
       setFormArray(storedFormData);
@@ -25,10 +26,8 @@ function Assistencia() {
     })
 
     const [formArray, setFormArray] = useState([]);
-
     
-    const [nome, setNome] = useState('')
-    const [phone, setPhone] = useState('')
+    const [nome, setNome] = useState('')    
     const [email, setEmail] = useState('')
     const [text, setText] = useState('')
 
@@ -42,6 +41,7 @@ function Assistencia() {
         setText(e.target.value)
     }  
 
+    //funcao submit envia dados
     function handleSubmit(e) {
         e.preventDefault();
         setFormArray((prevFormArray) => [...prevFormArray, formData]);
@@ -50,8 +50,9 @@ function Assistencia() {
           email: "",
           phone: "",
           text: "",
-        });        
-        console.log(formArray);
+        });
+        alert('obrigado')        
+        console.log(formData);
       }
 
     function formatPhone(value) {
@@ -72,6 +73,7 @@ function Assistencia() {
       
       return formattedPhone;
     }  
+    //alterando e enviando dados
     function handleChange(e) {
         const formattedPhone = formatPhone(e.target.value);
         setFormData((prevData) => ({
@@ -82,12 +84,9 @@ function Assistencia() {
             text: text,
           }));
     
-    }
-
-   
-
+    } 
     useEffect(() => {
-    // Save the form data to localStorage whenever formArray changes
+    // salvando com alteracoes
     localStorage.setItem("formArray", JSON.stringify(formArray));
   }, [formArray]);
     
@@ -159,6 +158,7 @@ function Assistencia() {
                                                     id="" 
                                                     cols="25" 
                                                     rows="5"
+                                                    value={text}
                                                     className="w-full"
                                                     onChange={handleChangeText}
                                                 >                                                                                                
@@ -213,20 +213,26 @@ function Assistencia() {
                                         <h3 className="text-green-800 text-base md:text-2xl">(18)99899-9999 </h3>
                                         </div>
                                     </div>
-                                    <div>
-                                        <h2>Stored Form Data</h2>
-                                        <ul>
-                                            {formArray.map((formData, index) => (
-                                            <li key={index}>
-                                                <strong>Name:</strong> {formData.name} <br />
-                                                <strong>Email:</strong> {formData.email} <br />
-                                                <strong>Phone:</strong> {formData.phone} <br />
-                                                <strong>Text:</strong> {formData.text} <br />
-                                                <hr />
-                                            </li>
-                                            ))}
-                                        </ul>
-                                    </div>
+                                        {
+                                            /*
+                                            testando dados
+                                            <div>
+                                                <h2>Stored Form Data</h2>
+                                                <ul>
+                                                    {formArray.map((formData, index) => (
+                                                    <li key={index}>
+                                                        <strong>Name:</strong> {formData.name} <br />
+                                                        <strong>Email:</strong> {formData.email} <br />
+                                                        <strong>Phone:</strong> {formData.phone} <br />
+                                                        <strong>Text:</strong> {formData.text} <br />
+                                                        <hr />
+                                                    </li>
+                                                    ))}
+                                                </ul>
+                                            </div> 
+                                            */
+                                        }                                  
+                                                                       
                                 </div>                              
                             </div>
                         </div>
