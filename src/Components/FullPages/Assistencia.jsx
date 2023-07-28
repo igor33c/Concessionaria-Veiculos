@@ -1,95 +1,107 @@
-import MenuModelos from "../MenuModelos";
-import TopInfo from "../TopInfo";
-import TopMenu from "../TopMenu";
-import BottomInfo from "../BottomInfo";
+import React, { useState, useEffect } from "react"
+import MenuModelos from "../MenuModelos"
+import TopInfo from "../TopInfo"
+import TopMenu from "../TopMenu"
+import BottomInfo from "../BottomInfo"
 import whats from "../../images/whats.png"
 import phoneImg from "../../images/phone2.png"
 
-import { useState, useEffect } from "react";
-
 function Assistencia() {
-
     useEffect(() => {
-    //carregando form
-
-    const storedFormData = JSON.parse(localStorage.getItem("formArray"));
+    // Carregando form
+    const storedFormData = JSON.parse(localStorage.getItem("formArray"))
     if (storedFormData) {
-      setFormArray(storedFormData);
+        setFormArray(storedFormData)
+        console.log("this is a test", storedFormData)
     }
-    }, []);
+    }, [])
 
     const [formData, setFormData] = useState({
-        name: '',
-        phone: '',
-        email: '',
-        text: '',
-    })
+        name: "",
+        phone: "",
+        email: "",
+        text: "",
+    });
 
-    const [formArray, setFormArray] = useState([]);
-    
-    const [nome, setNome] = useState('')    
-    const [email, setEmail] = useState('')
-    const [text, setText] = useState('')
+    const [formArray, setFormArray] = useState([])
+    const [nome, setNome] = useState("")
+    const [email, setEmail] = useState("")
+    const [text, setText] = useState("")
+    const [phone, setPhone] = useState("")
 
-    function handleChangeName(e){
+    const [loadedFormData, setLoadedFormData] = useState([]);
+
+    function handleChangeName(e) {
         setNome(e.target.value)
     }
-    function handleChangeEmail(e){
+
+    function handleChangeEmail(e) {
         setEmail(e.target.value)
     }
-    function handleChangeText(e){
-        setText(e.target.value)
-    }  
 
-    //funcao submit envia dados
+    function handleChangeText(e) {
+        setText(e.target.value)
+    }
+
+    // Funcao submit envia dados
     function handleSubmit(e) {
-        e.preventDefault();
-        setFormArray((prevFormArray) => [...prevFormArray, formData]);
-        setFormData({
-          name: "",
-          email: "",
-          phone: "",
-          text: "",
-        });
-        alert('obrigado')        
-        console.log(formData);
-      }
+        e.preventDefault()
+    
+        // Create a new object to hold the form data
+        const newFormData = {
+            name: nome,
+            email: email,
+            phone: phone,
+            text: text,
+        };
+    
+        //atualizando form data
+        setFormData(newFormData);
+    
+        // usando newFormData para att lodeadformdata
+        setLoadedFormData((prevLoadedFormData) => [...prevLoadedFormData, newFormData])    
+        alert("obrigado")
+        console.log(newFormData)
+    
+        // Limpar form and form for next
+        setNome("")
+        setEmail("")
+        setText("")
+        setPhone("")
+        setFormData(
+            {
+                name: "",
+                email: "",
+                phone: "",
+                text: "",
+            }
+        )
+    }   
 
     function formatPhone(value) {
-        
-      // remover nao numericos
-      const phone = value.replace(/\D/g, '');
-  
-      // verifica se ta vazio ou nao
+        // Remover nao numericos
+        const phone = value.replace(/\D/g, "")
+        // Verifica se ta vazio ou nao
+        if (phone.length === 0) {
+            return ""
+        }
+        // Formatando para formato cel
+        let formattedPhone = phone.substring(0, 11)
+        formattedPhone = 
+             `(${formattedPhone.substring(0, 2)})${formattedPhone.substring(2, 7)}-${formattedPhone.substring(7)}`
+        return formattedPhone
+    }
 
-      if (phone.length === 0) {
-        return '';
-      }
-  
-      // formatando para formato cel
-      let formattedPhone = phone.substring(0, 11);
-      formattedPhone =
-      `(${formattedPhone.substring(0, 2)})${formattedPhone.substring(2, 7)}-${formattedPhone.substring(7)}`;
-      
-      return formattedPhone;
-    }  
-    //alterando e enviando dados
-    function handleChange(e) {
-        const formattedPhone = formatPhone(e.target.value);
-        setFormData((prevData) => ({
-            ...prevData,
-            name: nome,
-            phone: formattedPhone,
-            email: email,
-            text: text,
-          }));
-    
-    } 
+    // Alterando e enviando dados
+    function handleChangePhone(e) {
+        const formattedPhone = formatPhone(e.target.value)
+        setPhone(formattedPhone)
+    }
+
     useEffect(() => {
-    // salvando com alteracoes
-    localStorage.setItem("formArray", JSON.stringify(formArray));
-  }, [formArray]);
-    
+        // Save loadedFormData to localStorage when it changes
+        localStorage.setItem("formArray", JSON.stringify(loadedFormData))
+    }, [loadedFormData])   
   
   return(
         <>
@@ -143,8 +155,8 @@ function Assistencia() {
                                                     className="px-1" 
                                                     type="tel" 
                                                     id="phone" 
-                                                    value={formData.phone}                                            
-                                                    onChange={handleChange}
+                                                    value={phone}                                            
+                                                    onChange={handleChangePhone}
                                                 />
                                             </div>
                                         </label>
@@ -186,14 +198,14 @@ function Assistencia() {
                                         Contato especializado:
                                     </h2>
                                 </div>
-                                <div className="flex flex-wrap justify-center md:justify-start">
+                                <div className="flex flex-wrap justify-center">
                                     <div className="mt-4 pt-6 pr-2 border-solid border-gray-200 border 
                                                     flex items-start rounded-2xl mx-2 md:mr-4 md:ml-0">
                                         <div className="-mt-6 pr-2">
                                         <img
                                             src={phoneImg}
                                             alt=""
-                                            className="w-12 h-12 md:w-16 md:h-16 max-w-full h-auto"
+                                            className="w-12 h-12 md:w-16 md:h-16 max-w-full h-auto text-green-500"
                                         />
                                         </div>
                                         <div>
@@ -213,7 +225,7 @@ function Assistencia() {
                                         <h3 className="text-green-800 text-base md:text-2xl">(18)99899-9999 </h3>
                                         </div>
                                     </div>
-                                        {
+                                            {
                                             /*
                                             testando dados
                                             <div>
@@ -231,8 +243,7 @@ function Assistencia() {
                                                 </ul>
                                             </div> 
                                             */
-                                        }                                  
-                                                                       
+                                            }                                                                       
                                 </div>                              
                             </div>
                         </div>
