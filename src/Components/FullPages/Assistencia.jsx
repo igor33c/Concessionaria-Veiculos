@@ -7,29 +7,18 @@ import whats from "../../images/whats.png"
 import phoneImg from "../../images/phone2.png"
 
 function Assistencia() {
-    useEffect(() => {
-    // Carregando form
-    const storedFormData = JSON.parse(localStorage.getItem("formArray"))
-    if (storedFormData) {
-        setFormArray(storedFormData)
-        console.log("this is a test", storedFormData)
-    }
-    }, [])
-
     const [formData, setFormData] = useState({
         name: "",
         phone: "",
         email: "",
         text: "",
-    });
+    })
 
     const [formArray, setFormArray] = useState([])
     const [nome, setNome] = useState("")
     const [email, setEmail] = useState("")
     const [text, setText] = useState("")
-    const [phone, setPhone] = useState("")
-
-    const [loadedFormData, setLoadedFormData] = useState([]);
+    const [phone, setPhone] = useState("")   
 
     function handleChangeName(e) {
         setNome(e.target.value)
@@ -44,39 +33,29 @@ function Assistencia() {
     }
 
     // Funcao submit envia dados
-    function handleSubmit(e) {
+    function handleSubmit(e) {        
         e.preventDefault()
-    
-        // Create a new object to hold the form data
-        const newFormData = {
+        setFormData({
             name: nome,
             email: email,
             phone: phone,
             text: text,
-        };
-    
-        //atualizando form data
-        setFormData(newFormData);
-    
+        })    
         // usando newFormData para att lodeadformdata
-        setLoadedFormData((prevLoadedFormData) => [...prevLoadedFormData, newFormData])    
+            
         alert("obrigado")
-        console.log(newFormData)
+        console.log(formData)
     
         // Limpar form and form for next
         setNome("")
         setEmail("")
         setText("")
         setPhone("")
-        setFormData(
-            {
-                name: "",
-                email: "",
-                phone: "",
-                text: "",
-            }
-        )
-    }   
+                        
+    }
+    useEffect(() => {
+            console.log('this is the', formData)
+    }, [formData]);     
 
     function formatPhone(value) {
         // Remover nao numericos
@@ -97,13 +76,8 @@ function Assistencia() {
         const formattedPhone = formatPhone(e.target.value)
         setPhone(formattedPhone)
     }
-
-    useEffect(() => {
-        // Save loadedFormData to localStorage when it changes
-        localStorage.setItem("formArray", JSON.stringify(loadedFormData))
-    }, [loadedFormData])   
-  
-  return(
+   
+    return(
         <>
             <TopMenu />
             <TopInfo />
@@ -127,7 +101,9 @@ function Assistencia() {
                                             Seu Nome:
                                             <div>
                                                 <input
+                                                    className="pl-1"
                                                     value={nome}
+                                                    id="nome"
                                                     type="text"
                                                     onChange={handleChangeName} 
                                                 />
@@ -138,7 +114,8 @@ function Assistencia() {
                                         <label htmlFor="email">
                                             Seu e-mail:
                                             <div className="">
-                                                <input                                    
+                                                <input        
+                                                    className="pl-1"                            
                                                     type="email"
                                                     id="email"
                                                     value={email}
@@ -152,7 +129,7 @@ function Assistencia() {
                                             Seu Celular:
                                             <div>
                                                 <input
-                                                    className="px-1" 
+                                                    className="pl-1" 
                                                     type="tel" 
                                                     id="phone" 
                                                     value={phone}                                            
@@ -171,7 +148,7 @@ function Assistencia() {
                                                     cols="25" 
                                                     rows="5"
                                                     value={text}
-                                                    className="w-full"
+                                                    className="w-full pl-1 pr-1"
                                                     onChange={handleChangeText}
                                                 >                                                                                                
                                                 </textarea>
