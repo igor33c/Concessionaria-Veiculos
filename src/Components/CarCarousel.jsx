@@ -1,11 +1,11 @@
-import React, { useState } from 'react';
+import React, { useState } from 'react'
 
 const CarCarousel = (props) => {
-  const [currentImage, setCurrentImage] = useState(props.carInfo.photo.photo_1); // Start with the first image
+  const [currentImage, setCurrentImage] = useState(props.carInfo.photo.photo_1)//começar da img 1
 
   const handleImageClick = (photo) => {
-    setCurrentImage(photo);
-  };
+    setCurrentImage(photo)
+  }
 
   return (
     <div className="w-full max-w-xl mx-auto">
@@ -29,7 +29,6 @@ const CarCarousel = (props) => {
         ))}
       </div>
     </div>
-  );
-};
-
-export default CarCarousel;
+  )
+}
+export default CarCarousel

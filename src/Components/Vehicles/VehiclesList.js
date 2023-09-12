@@ -160,9 +160,9 @@ const carData = {
         km: 24252,
         preco: 52700,
         photo: { 
-            photo_1: car8_photo_1,
-            photo_2: car8_photo_2,
-            photo_3: car8_photo_3,
+            photo_1: car9_photo_1,
+            photo_2: car9_photo_2,
+            photo_3: car9_photo_3,
         },       
     }
   };
