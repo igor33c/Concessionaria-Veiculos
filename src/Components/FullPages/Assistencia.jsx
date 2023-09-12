@@ -31,7 +31,6 @@ function Assistencia() {
     function handleChangeText(e) {
         setText(e.target.value)
     }
-
     // Funcao submit envia dados
     function handleSubmit(e) {        
         e.preventDefault()
@@ -43,8 +42,7 @@ function Assistencia() {
         })    
         // usando newFormData para att lodeadformdata
             
-        alert("obrigado")
-        console.log(formData)
+        alert("obrigado")       
     
         // Limpar form and form for next
         setNome("")
@@ -56,7 +54,6 @@ function Assistencia() {
     useEffect(() => {
             console.log('this is the', formData)
     }, [formData]);     
-
     function formatPhone(value) {
         // Remover nao numericos
         const phone = value.replace(/\D/g, "")
@@ -75,8 +72,7 @@ function Assistencia() {
     function handleChangePhone(e) {
         const formattedPhone = formatPhone(e.target.value)
         setPhone(formattedPhone)
-    }
-   
+    }   
     return(
         <>
             <TopMenu />
@@ -92,13 +88,17 @@ function Assistencia() {
                             <div className="border-gray-200 border-solid border-2 px-4
                                             bg-gradient-to-br from-green-100 to-blue-200"
                             >
-                                <h2 className="text-red-500 font-bold text-2xl">
-                                    Preencha o Formulário abaixo:
-                                </h2>
+                                <div className="py-4 text-center">
+                                    <h2 className="text-red-500 font-bold text-2xl">
+                                        Preencha o Formulário abaixo:
+                                    </h2>
+                                </div>
                                 <form onSubmit={handleSubmit}>
                                     <div className="py-1">
                                         <label htmlFor="Nome">
-                                            Seu Nome:
+                                            <p className="4-xl">
+                                                Seu Nome:
+                                            </p>
                                             <div>
                                                 <input
                                                     className="pl-1"
@@ -186,7 +186,9 @@ function Assistencia() {
                                         />
                                         </div>
                                         <div>
-                                        <h3 className="text-green-800 text-base md:text-2xl">(18)3000-0000 </h3>
+                                        <h3 className="text-green-800 text-base md:text-2xl">
+                                            (18)3000-0000 
+                                        </h3>
                                         </div>
                                     </div>
                                     <div className="mt-4 pt-6 pr-2 border-solid border-gray-200 border 
@@ -199,7 +201,9 @@ function Assistencia() {
                                         />
                                         </div>
                                         <div>
-                                        <h3 className="text-green-800 text-base md:text-2xl">(18)99899-9999 </h3>
+                                        <h3 className="text-green-800 text-base md:text-2xl">
+                                            (18)99899-9999 
+                                        </h3>
                                         </div>
                                     </div>
                                             {
