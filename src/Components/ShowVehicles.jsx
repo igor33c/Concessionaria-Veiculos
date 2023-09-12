@@ -18,7 +18,7 @@ function ShowVehicles (){
                         }
                         <img
                         className="w-full md:w-64 h-48  object-cover"
-                        src={carData.car1.photo_1}
+                        src={carData.car1.photo.photo_1}
                         alt="corolla2000"
                         />
                     </Link>
@@ -42,7 +42,7 @@ function ShowVehicles (){
                     <Link to="/comprar" state={carData.car2}>
                     <img
                     className="w-full md:w-64 h-48 object-cover"
-                    src={carData.car2.photo_1}
+                    src={carData.car2.photo.photo_1}
                     alt="Civic 2020"
                     />
                     </Link>
@@ -67,7 +67,7 @@ function ShowVehicles (){
                     <Link to="/comprar" state={carData.car3}>
                     <img
                     className="w-full md:w-64 h-48 object-cover"
-                    src={carData.car3.photo_1}
+                    src={carData.car3.photo.photo_1}
                     alt="--"
                     />
                     </Link>
@@ -91,7 +91,7 @@ function ShowVehicles (){
                     <Link to="/comprar" state={carData.car4}>
                     <img
                     className="w-full md:w-64 h-48 object-cover"
-                    src={carData.car4.photo_1}
+                    src={carData.car4.photo.photo_1}
                     alt="Civic 2020"
                     />
                     </Link>

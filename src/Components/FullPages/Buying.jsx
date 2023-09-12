@@ -5,6 +5,7 @@ import * as React from 'react';
 import { useLocation } from 'react-router-dom';
 import { useState } from "react";
 import BottomInfo from "../BottomInfo";
+import CarCarousel from "../CarCarousel"
 
 function Buying() {
     const location = useLocation()// usa o UseLocation para receber dados enviados
@@ -17,19 +18,17 @@ function Buying() {
           <TopMenu />
           <TopInfo />
           <MenuModelos />
-          <div className="bg-gradient-to-br from-slate-50 to-green-100 px-4 py-4">
+          <div className="bg-gradient-to-br from-slate-50 to-green-50 px-4 py-4">
                 <div className="text-center py-4">
                     <p className="text-4xl text-slate-800">{carInfo.marca} {carInfo.modelo} {carInfo.ano}</p>
                 </div>
                 <div className="px-8 grid grid-cols-1 
                                 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-2 gap-4 sm:gap-6 md:gap-8 
                                 lg:gap-10 xl:gap-12 py-24"
-                >
-                    <div>
-                        <img src={carInfo.photo_1} alt="" />
-                        <img src={carInfo.photo_2} alt="" /> 
-                        <img src={carInfo.photo_3} alt="" />  
-                    </div>                    
+                >   
+                    <CarCarousel
+                        carInfo={carInfo}
+                    />                                     
                     <div className="text-center border-solid border-2 border-sky-200 rounded-3xl">
                         <div className="py-4">
                             <span className="font-bold  text-blue-500 text-4xl">
