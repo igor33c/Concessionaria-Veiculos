@@ -5,6 +5,7 @@ import TopMenu from "../TopMenu"
 import BottomInfo from "../BottomInfo"
 import whats from "../../images/whats.png"
 import phoneImg from "../../images/phone2.png"
+import FormattedPhone from "../FormattedPhone"
 
 function Assistencia() {
     const [formData, setFormData] = useState({
@@ -13,8 +14,7 @@ function Assistencia() {
         email: "",
         text: "",
     })
-
-    const [formArray, setFormArray] = useState([])
+    
     const [nome, setNome] = useState("")
     const [email, setEmail] = useState("")
     const [text, setText] = useState("")
@@ -53,7 +53,9 @@ function Assistencia() {
     }
     useEffect(() => {
             console.log('this is the', formData)
-    }, [formData]);     
+    }, [formData]); 
+
+    /*
     function formatPhone(value) {
         // Remover nao numericos
         const phone = value.replace(/\D/g, "")
@@ -67,10 +69,12 @@ function Assistencia() {
              `(${formattedPhone.substring(0, 2)})${formattedPhone.substring(2, 7)}-${formattedPhone.substring(7)}`
         return formattedPhone
     }
+    */
 
     // Alterando e enviando dados
     function handleChangePhone(e) {
-        const formattedPhone = formatPhone(e.target.value)
+        const unformattedPhone = e.target.value
+        const formattedPhone = FormattedPhone(unformattedPhone)
         setPhone(formattedPhone)
     }   
     return(
