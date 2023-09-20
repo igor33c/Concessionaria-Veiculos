@@ -37,11 +37,14 @@ function Ford (){
                             <p>
                                 Kilometragem: {fordCars[carId].km}
                             </p>
-                            <p className="font-bold text-lg text-blue-500">
+                            <p  className="font-bold text-lg text-blue-500">
                                 Preço: R${fordCars[carId].preco.toLocaleString('pt-BR', {minimumFractionDigits: 2})}
                             </p>
                             <Link to="/comprar" state={fordCars[carId]}>
-                                <img src={fordCars[carId].photo.photo_1} alt="" className="w-full md:w-64 h-48 object-cover"/> 
+                                <img 
+                                    src={fordCars[carId].photo.photo_1} 
+                                    alt="" 
+                                    className="w-full md:w-64 h-48 object-cover"/> 
                             </Link>                   
                         </div>
                     ))}

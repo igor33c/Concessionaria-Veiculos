@@ -11,6 +11,7 @@ import Assistencia from "../FullPages/Assistencia";
 import Volskwagen from "../Vehicles/Volkswagen";
 import Chevrolet from "../Vehicles/Chevrolet";
 import Buying from "../FullPages/Buying";
+import Searching from "../Vehicles/Searching"
 
 const Content = props => (
     <main className='Content'>
@@ -24,8 +25,9 @@ const Content = props => (
             <Route path="/ford" element={<Ford />} /> 
             <Route path="/toyota" element={<Toyota />} /> 
             <Route path="/about" element={<About />} />          
-            <Route path="/all" element={<AllVehicles />} />   
-            <Route path="/" exact element={<Home />} />
+            <Route path="/all" element={<AllVehicles />} />
+            <Route path="/search" element={<Searching />} />   
+            <Route path="/" exact element={<Home />} />            
         </Routes>
     </main>
 )
