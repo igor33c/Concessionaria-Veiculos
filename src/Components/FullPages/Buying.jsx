@@ -114,7 +114,7 @@ function Buying() {
                             <div className="py-2">
                                 <button 
                                     className="text-slate-900 bg-blue-200 hover:bg-blue-300 focus:ring-4 
-                                            focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 w-full
+                                            focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5
                                                 focus:outline-none"                                                
                                     type="submit"                                            
                                 >

@@ -138,6 +138,11 @@ const carData = {
         ano: 2023,
         km: 0,
         preco: 205320,
+        equipamentos: {
+            arcondicionado: 'Sim',
+            faroldemilha: false,
+            cambio: 'Automático',
+        }, 
         photo: { 
             photo_1: car6_photo_1,
             photo_2: car6_photo_2,
@@ -156,7 +161,7 @@ const carData = {
         equipamentos: {
             arcondicionado: 'Sim',
             faroldemilha: true,
-            cambio: 'Manual',
+            cambio: 'Automático',
         },
         photo: { 
             photo_1: car7_photo_1,
