@@ -4,7 +4,7 @@ import TopMenu from "../TopMenu"
 import { useState} from "react" 
 import { useLocation } from 'react-router-dom';
 import BottomInfo from "../BottomInfo";
-import CarCarousel from "../CarCarousel"
+import CarInfo from "../CarInfo"
 import FormattedPhone from "../FormattedPhone"
 
 function Buying() {
@@ -25,22 +25,7 @@ function Buying() {
     function handleChangeEmail(e){
         setEmail(e.target.value)
     }    
-
-    /*
-    function formatPhone(value) {
-        // Remover nao numericos
-        const phone = value.replace(/\D/g, "")
-        // Verifica se ta vazio ou nao
-        if (phone.length === 0) {
-            return ""
-        }
-        // Formatando para formato cel
-        let formattedPhone = phone.substring(0, 11)
-        formattedPhone = 
-             `(${formattedPhone.substring(0, 2)})${formattedPhone.substring(2, 7)}-${formattedPhone.substring(7)}`
-        return formattedPhone
-    }
-    */        
+           
     function handleChangePhone(e) {        
         const unformattedPhone = e.target.value
         const formattedPhone = FormattedPhone(unformattedPhone) //chamando FormattedPhone passando nao formatado
@@ -65,9 +50,9 @@ function Buying() {
                                 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-2 
                                 gap-4 sm:gap-6 md:gap-8 lg:gap-10 xl:gap-12 py-24"
                 >   
-                    <CarCarousel
+                    <CarInfo
                         carInfo={carInfo}
-                    />                                     
+                    />                                                     
                     <div className="bg-gradient-to-br from-slate-100 to-blue-50
                                     text-center border-solid border-2 border-sky-200 rounded-3xl">
                         <div className="py-4">

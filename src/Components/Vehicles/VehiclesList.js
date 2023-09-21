@@ -42,10 +42,12 @@ const carData = {
         },
 
         equipamentos: {
-            arcondicionado: 'sim',
+            arcondicionado: 'Sim',
             faroldemilha: 'sim',
-            cambio: 'manual'
-        }  
+            cambio: 'Manual'
+        },        
+        texto: 'Veículo em ótimo estado, bem conservado e abaixo da Tabela Fipe!'
+        
     },
     car2:
     {
@@ -61,10 +63,11 @@ const carData = {
             photo_3: car2_photo_3,
         },
         equipamentos: {
-            arcondicionado: 'sim',
+            arcondicionado: 'Sim',
             faroldemilha: 'sim',
-            cambio: 'automatico'
-        }        
+            cambio: 'Automatico'
+        },
+        texto: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit sit emen!'        
     },
     car3:
     {
@@ -73,12 +76,18 @@ const carData = {
         modelo: 'Argo 1.0',
         ano: 2021,
         km: 24021,
-        preco: 62340,      
+        preco: 62340,        
+        equipamentos: {
+            arcondicionado: 'Sim',
+            faroldemilha: 'Sim',
+            cambio: 'Automático'
+        },      
         photo: { 
             photo_1: car3_photo_1,
             photo_2: car3_photo_2,
             photo_3: car3_photo_3,
         }, 
+        texto: 'Lorem ipsum dolor sit amet, condectetur adipiscing elit sit emen!'
     },
     car4:
     {
@@ -88,11 +97,17 @@ const carData = {
         ano: 2007,
         km: 85100,
         preco: 28000,
+        equipamentos: {
+            arcondicionado: 'Sim',
+            faroldemilha: true,
+            cambio: 'Manual',
+        },
         photo: { 
             photo_1: car4_photo_1,
             photo_2: car4_photo_2,
             photo_3: car4_photo_3,
         },
+        texto: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit sit emen!'
                
     },
     car5:
@@ -103,11 +118,17 @@ const carData = {
         ano: 2011,
         km: 79543,
         preco: 21000,
+        equipamentos: {
+            arcondicionado: 'Sim',
+            faroldemilha: false,
+            cambio: 'Automático',
+        },        
         photo: { 
             photo_1: car5_photo_1,
             photo_2: car5_photo_2,
             photo_3: car5_photo_3,
-        },     
+        },
+        texto: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit sit emen!'     
     },
     car6:
     {
@@ -121,7 +142,8 @@ const carData = {
             photo_1: car6_photo_1,
             photo_2: car6_photo_2,
             photo_3: car6_photo_3,
-        },    
+        },
+        texto: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit sit emen!'    
     },
     car7:
     {
@@ -131,11 +153,17 @@ const carData = {
         ano: 2014,
         km: 74000,
         preco: 29000,
+        equipamentos: {
+            arcondicionado: 'Sim',
+            faroldemilha: true,
+            cambio: 'Manual',
+        },
         photo: { 
             photo_1: car7_photo_1,
             photo_2: car7_photo_2,
             photo_3: car7_photo_3,
-        },       
+        },
+        texto: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit sit emen!'       
     },
     car8:
     {
@@ -145,11 +173,17 @@ const carData = {
         ano: 2019,
         km: 7842,
         preco: 52700,
+        equipamentos: {
+            arcondicionado: 'Sim',
+            faroldemilha: true,
+            cambio: 'Manual',
+        },
         photo: { 
             photo_1: car8_photo_1,
             photo_2: car8_photo_2,
             photo_3: car8_photo_3,
-        },     
+        },
+        texto: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit sit emen!'     
     },
     car9:
     {
@@ -159,11 +193,17 @@ const carData = {
         ano: 2020,
         km: 24252,
         preco: 52700,
+        equipamentos: {
+            arcondicionado: 'Sim',
+            faroldemilha: true,
+            cambio: 'Manual',
+        },
         photo: { 
             photo_1: car9_photo_1,
             photo_2: car9_photo_2,
             photo_3: car9_photo_3,
-        },       
+        },
+        texto: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit sit emen!'       
     }
   };
 

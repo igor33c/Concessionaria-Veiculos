@@ -11,7 +11,7 @@ function AllVehicles (){
     const [ordenar, setOrdenar] = useState("Padrão")
     const [allData, setAllData] = useState(Object.values(carData)) // recebendo obj de carData
     //necessario usar setState para poder alterar allData       
-    const [search, setSearch] = useState('oi')
+    const [search, setSearch] = useState('')   
     
     function handleSearch(e) {
         setSearch(e.target.value)        
@@ -51,11 +51,11 @@ function AllVehicles (){
                     {showOrdenar && 
                         (
                             <ul className="absolute left-20 bg-gray-500 rounded-lg py-1 px-3 
-                                            flex flex-col items-center"
+                                           flex flex-col items-center"
                             >
                                 <button 
                                     className="text-white bg-transparent px-3 
-                                    hover:text-gray-100 text-sm "
+                                               hover:text-gray-100 text-sm "
                                     onClick={() => handleClickButton('Menor Preço')}
                                     
                                 >
@@ -100,8 +100,8 @@ function AllVehicles (){
                         >                                
                             <button 
                                 className="ml-4 text-slate-900 bg-blue-200 hover:bg-blue-300 focus:ring-4 
-                                        focus:ring-blue-300 font-medium rounded-lg text-sm px-5 
-                                        py-2.5 w-full focus:outline-none" 
+                                         focus:ring-blue-300 font-medium rounded-lg text-sm px-5 
+                                           py-2.5 w-full focus:outline-none" 
                             >
                                 Buscar
                             </button>
@@ -117,32 +117,37 @@ function AllVehicles (){
                     {
                         Object.keys(allData).map(
                             (carId) => 
-                                (/// mapeando o obj usando carId como Key
-                                    <div key={carId} className="w-full md:w-auto px-2"
-                                    > 
-                                    {
-                                    ///div para cada veiculo ser mostrado separadamente
-                                    }
-                                        <Link to="/comprar" state={allData[carId]}> 
-                                            <img src={allData[carId].photo.photo_1}  alt="" className="object-cover w-full h-44 mx-auto"
-                                            />
-                                        </Link> 
-                                        <div className=" p-2 text-center">
-                                            <p className="font-bold text-lg">
-                                                {allData[carId].marca} {allData[carId].modelo} 
-                                            </p>
-                                            <p>
-                                            Ano: {allData[carId].ano}
-                                            </p>
-                                            <p>
-                                                Kilometragem: {allData[carId].km}
-                                            </p>
-                                            <p className="font-bold text-lg text-blue-500">
-                                                Preço: R${allData[carId].preco.toLocaleString
-                                                         ('pt-BR', {minimumFractionDigits: 2})}
-                                            </p>
-                                        </div>                                    
+                            (/// mapeando o obj usando carId como Key
+                                <div 
+                                    key={carId} 
+                                    className="w-full md:w-auto px-2"
+                                > 
+                                {
+                                ///div para cada veiculo ser mostrado separadamente
+                                }
+                                    <Link to="/comprar" state={allData[carId]}> 
+                                        <img 
+                                            src={allData[carId].photo.photo_1}  
+                                            alt="not_found" 
+                                            className="object-cover w-full h-44 mx-auto"
+                                        />
+                                    </Link> 
+                                    <div className=" p-2 text-center">
+                                        <p className="font-bold text-lg">
+                                            {allData[carId].marca} {allData[carId].modelo} 
+                                        </p>
+                                        <p>
+                                        Ano: {allData[carId].ano}
+                                        </p>
+                                        <p>
+                                            Kilometragem: {allData[carId].km}
+                                        </p>
+                                        <p className="font-bold text-lg text-blue-500">
+                                            Preço: R${allData[carId].preco.toLocaleString
+                                                        ('pt-BR', {minimumFractionDigits: 2})}
+                                        </p>
                                     </div>                                    
+                                </div>                                    
                             )
                         )
                     }
