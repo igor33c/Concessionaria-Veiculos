@@ -4,7 +4,7 @@ import { Link } from "react-router-dom"
 
 function ShowVehicles (){         
     return(
-        <div className="px-4 py-8">
+        <div className="px-4 py-8 bg-gradient-to-r from-indigo-100 from-10% via-red-50 via-30% to-emerald-50 to-90%">
             <div className="text-center mt-4 mb-4">
                 <h1 className="text-blue-500 font-bold text-lg md:text-4xl">
                     Em destaque

@@ -197,7 +197,7 @@ const carData = {
         modelo: 'Onix 1.0 Turbo',
         ano: 2020,
         km: 24252,
-        preco: 52700,
+        preco: 52600,
         equipamentos: {
             arcondicionado: 'Sim',
             faroldemilha: true,
@@ -210,6 +210,6 @@ const carData = {
         },
         texto: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit sit emen!'       
     }
-  };
+  }
 
   export default carData

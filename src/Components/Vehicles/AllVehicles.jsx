@@ -5,17 +5,15 @@ import TopInfo from "../TopInfo"
 import TopMenu from "../TopMenu"
 import carData from "./VehiclesList"
 import { Link } from "react-router-dom"
+import SearchButton from "../SearchButton"
+import Ordenar from "../Ordenar"
 
 function AllVehicles (){       
     const [showOrdenar, setShowOrdenar] = useState(false)
     const [ordenar, setOrdenar] = useState("Padrão")
     const [allData, setAllData] = useState(Object.values(carData)) // recebendo obj de carData
-    //necessario usar setState para poder alterar allData       
-    const [search, setSearch] = useState('')   
-    
-    function handleSearch(e) {
-        setSearch(e.target.value)        
-    }    
+    //necessario usar setState para poder alterar allData     
+       
     const handleClickButton = (newOrdenar) => {
         setOrdenar(newOrdenar)//monstrado botao com mostrar a opcao desejada            
         let sortedData = [...allData]//inicializacao       
@@ -43,74 +41,20 @@ function AllVehicles (){
             <MenuModelos />
             <div className="bg-gradient-to-br from-blue-100 to-violet-200">
                 <div className="flex py-2">                    
-                    <span className="py-4 px-8">Ordenar por:</span>
-                    <button className="bg-transparent hover:border-gray-600 hover:text-gray-500 mt-1" 
-                        onClick={() => setShowOrdenar(!showOrdenar)}>                        
-                        {ordenar}
-                    </button>
-                    {showOrdenar && 
-                        (
-                            <ul className="absolute left-20 bg-gray-500 rounded-lg py-1 px-3 
-                                           flex flex-col items-center"
-                            >
-                                <button 
-                                    className="text-white bg-transparent px-3 
-                                               hover:text-gray-100 text-sm "
-                                    onClick={() => handleClickButton('Menor Preço')}
-                                    
-                                >
-                                    {/* muda ordem chamando handleclickbutton*/}                                     
-                                    Menor Preço
-                                </button>
-                                <button 
-                                    className="text-white bg-transparent px-3 
-                                    hover:text-gray-200 text-sm "
-                                    onClick={() => handleClickButton('Maior Preço')}
-                                >
-                                    {/* muda ordem chamando handleclickbutton*/} 
-                                    Maior Preço
-                                </button>
-                                <button 
-                                    className="text-white bg-transparent px-3 
-                                    hover:text-gray-200 text-sm "
-                                    onClick={() => handleClickButton('Padrão')}
-                                >
-                                    {/* muda ordem chamando handleclickbutton*/} 
-                                    Padrão
-                                </button>              
-                            </ul>
-                        )
-                    }                                        
+                    <span className="py-4 px-8">Ordenar por:</span>  
+                    <Ordenar
+                        setShowOrdenar={setShowOrdenar} 
+                        handleClickButton={handleClickButton}
+                        showOrdenar={showOrdenar}
+                        ordenar={ordenar}
+                    />                                        
                 </div>
-                <div className="flex items-center">
-                    <div className="ml-8 flex border border-blue-200 rounded py-1 px-1">
-                        <input
-                            type="text"
-                            className="block w-400 px-4 py-2 text-violet-900 bg-white border rounded-md 
-                                     focus:border-blue-300 focus:ring-blue-400 
-                                       focus:outline-none focus:ring focus:ring-opacity-40"
-                            placeholder="Filtrar marca ou modelo"
-                            value={search}
-                            onChange={handleSearch}
-                        />
-
-                        <Link                        
-                            to ="/search"
-                            state={search}                            
-                        >                                
-                            <button 
-                                className="ml-4 text-slate-900 bg-blue-200 hover:bg-blue-300 focus:ring-4 
-                                         focus:ring-blue-300 font-medium rounded-lg text-sm px-5 
-                                           py-2.5 w-full focus:outline-none" 
-                            >
-                                Buscar
-                            </button>
-                            
-                        </Link>
-                    </div>
+                <div className="flex items-center">                    
+                        <SearchButton />     
+                    
                 </div>
                 <div 
-                    className="px-8 car grid grid-cols-1 
+                    className="px-8 grid grid-cols-1 
                                sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 
                                xl:grid-cols-4 gap-4 sm:gap-6 md:gap-8 lg:gap-10 xl:gap-12 py-24"
                 >      
@@ -158,3 +102,4 @@ function AllVehicles (){
     )
 }
 export default AllVehicles
+
